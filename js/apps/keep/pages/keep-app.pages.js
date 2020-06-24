@@ -7,25 +7,52 @@ export default {
     template: `
     <main>
         <h1>Hello keep App</h1>
-        <note-search></note-search>
-        <note-list :notes="notes"></note-list>
-
+        <note-search  @filtered="setFilter"></note-search>
+        <note-list  :notes="notesToShow"></note-list>
     </main>   
 `,
-data(){
-    return{
-        notes:[]
-    }
-},
-components:{
-    noteSearch,
-    noteList
-},
-created() {
-    keepServices.getNotes()
-        .then(notes => {
-            console.log(notes);
-            this.notes = notes;
-        })
-},
+    data(){
+        return{
+            notes:[],
+            currNote: null,
+            filterBy: null
+        }
+    },
+    components:{
+        noteSearch,
+        noteList
+    },
+    created() {
+        keepServices.getNotes()
+            .then(notes => {
+                console.log(notes);
+                this.notes = notes;
+            })
+    },
+    methods: {
+            setFilter(filterBy) {
+                this.filterBy = filterBy;
+            },
+            // selectNote(note) {
+            //     this.currNote = note;
+            // }
+    },
+    computed: {
+            notesToShow() {
+                const filterBy = this.filterBy;
+                if (!filterBy) return this.notes;
+                var filteredNotes = this.notes;
+                if (filterBy.searchByTitle) {
+                    filteredNotes = filteredNotes.filter(notes => {
+                        return (notes.type.toLowerCase().includes(filterBy.searchByTitle.toLowerCase()));
+                    });
+                }
+                return filteredNotes;
+             }
+           
+         }   
+         
 }
+
+
+

@@ -1,0 +1,12 @@
+.search-bar{
+    text-align: center;
+    margin: 0 auto; 
+}
+.search-bar input{ 
+    margin: unset;
+    padding: 15px;
+}
+.search-bar h1{
+    margin: 0 auto;
+    font-size:  2rem;
+}

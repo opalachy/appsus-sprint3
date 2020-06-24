@@ -1,0 +1,12 @@
+
+.note-list div li{
+   width: 300px;
+   padding: 20px;
+   text-align: center;
+   display: grid;
+}
+.note-list img{
+    width: 250px    ;
+    /* height: 80%; */
+    
+}

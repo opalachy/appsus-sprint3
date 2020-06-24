@@ -1,4 +1,4 @@
 @import './apps/book/main.css';
 @import './helpers.css';
-@import './apps/email/cmps/email-preview.cmp.css'
-
+@import './apps/keep/search-bar.css';
+@import './apps/keep/note-list.css';
