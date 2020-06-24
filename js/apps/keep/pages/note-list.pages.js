@@ -7,8 +7,8 @@ export default{
      props:['notes'],
      template:`
     <ul class="note-list">
-        <div v-for="note in notes" v-bind:key="note.type" :note="note">
-           <component :is="note.type" :info="note.info" />
+        <div class="flex " v-for="note in notes" v-bind:key="note.type" :note="note">
+           <component v-on:click.native="editNote" :is="note.type" :info="note.info"></component>
         </div>
         
     </ul>
@@ -21,6 +21,13 @@ export default{
         NoteTodos
 
     },
+    methods:{
+        editNote: function(event){
+            console.log('edit',event);
+            
+        }
+    },
+
     created() {
         console.log(this.notes)
     }

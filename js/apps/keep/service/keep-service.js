@@ -48,7 +48,7 @@ function createNotes() {
  // <NoteMap>: bonus
    ];
    gNote = notes;
-   _saveNoteToStorage()
+  //  _saveNoteToStorage()
    return gNote;
 // }
 };
