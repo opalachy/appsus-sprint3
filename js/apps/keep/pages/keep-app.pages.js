@@ -1,5 +1,5 @@
 // import noteSearch from '../cmp/note-search.cmp.js'
-import { keepServices } from '../../keep/services/keep-service.js';
+import { keepServices } from '../../keep/service/keep-service.js';
 import noteSearch from '../cmps/note-search.cmp.js';
 import noteList from './note-list.pages.js';
 

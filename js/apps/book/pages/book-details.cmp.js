@@ -14,7 +14,7 @@ export default {
                 <h2 :class="classColor">{{this.book.listPrice.amount}}</h2>
                 <img v-if="book.listPrice.isOnSale" src="img/1.JPG" width=100px/>
                 <book-description :txt="book.description"></book-description>
-                <img src="book.thumbnail" width=200px>
+                <img :src="book.thumbnail" width=200px>
             </section>
             
         </section>

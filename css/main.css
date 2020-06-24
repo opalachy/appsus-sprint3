@@ -1,2 +1,2 @@
-@import '../css/apps/book/main.css';
-@import '/Appsus/css/helpers.css'
+@import './apps/book/main.css';
+@import './helpers.css'

@@ -7,7 +7,7 @@ export default {
         <li class="book-preview">
         <h2>{{book.title}} </h2>
         <h2 :class="classColor"> {{getCurSym}} </h2>
-        <img src="book.thumbnail" width=150px>
+        <img :src="book.thumbnail" width=150px >
         <router-link :to="'/book/' + book.id">Details</router-link> | 
         </li>
     `,
