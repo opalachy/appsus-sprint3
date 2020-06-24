@@ -46,7 +46,6 @@ export default {
             }
 
             if (filterBy.isRead) {
-                console.log(filteredEmails)
                 
                 filteredEmails = filteredEmails.filter(email => {
                     return email.isRead === filterBy.isRead;
