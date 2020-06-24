@@ -1,11 +1,13 @@
 
 import { emailServices } from '../service/email.service.js'
 import emailList from '../cmps/email-list.cmp.js';
+import emailFilter from '../cmps/email-filiter.cmp.js';
 
 export default {
     template: `
-    <main>
+    <main class="email-app">
         <h1>Hello</h1>
+        <email-filter @filtered="setFilter" ></email-filter>
         <email-list :emails="emailsToShow" ></email-list >
     </main>   
 `,
@@ -22,28 +24,32 @@ export default {
                 this.emails = emails;
             })
     },
+    methods: {
+        setFilter(filterBy) {
+            this.filterBy = filterBy;
+        }
+        // selectBook(book) {
+        //     this.currBook = book;
+        // }
+    },
     computed: {
         emailsToShow() {
             const filterBy = this.filterBy;
             if (!filterBy) return this.emails;
             var filteredEmails = this.emails;
 
-            if (filterBy.searchByTitle) {
+            if (filterBy.searchBySubject) {
 
                 filteredEmails = filteredEmails.filter(email => {
-                    return (email.title.toLowerCase().includes(filterBy.searchByTitle.toLowerCase()));
+                    return (email.subject.toLowerCase().includes(filterBy.searchBySubject.toLowerCase()));
                 });
             }
 
-            if (filterBy.fromPrice) {
+            if (filterBy.isRead) {
+                console.log(filteredEmails)
+                
                 filteredEmails = filteredEmails.filter(email => {
-                    return (email.listPrice.amount >= filterBy.fromPrice)
-                });
-            }
-
-            if (filterBy.toPrice) {
-                filteredEmails = filteredEmails.filter(email => {
-                    return (email.listPrice.amount <= filterBy.toPrice)
+                    return email.isRead === filterBy.isRead;
                 });
             }
             return filteredEmails;
@@ -52,7 +58,7 @@ export default {
 
     },
     components: {
-        // emailFilter,
+        emailFilter,
         emailList
     }
 }
