@@ -1,5 +1,7 @@
-// import emailDetails from '../pages/email-details.cmp.js'
-{/* <router-link :to="'/email/' + email.id">Details</router-link> |  */}
+ import emailDetails from '../pages/email-details.pages.js'
+ import { emailServices } from "../../email/service/email.service.js";
+//  <router-link :to="'/email/' + email.id">Details</router-link> | 
+
 
 export default {
     props: ['email'],
@@ -7,6 +9,7 @@ export default {
         <li class="email-preview">
         <h2 :class="isRead"> {{email.sentAt}} </h2>
         <h2 :class="isRead"> {{email.subject}} </h2>
+        <router-link @click.native="wasRead" :to="'/email/' + email.id + '/' + email.subject">Details</router-link> | 
         </li>
     `,
     data() {
@@ -20,7 +23,13 @@ export default {
         }
       
     },
+    methods:{
+        wasRead(){
+            emailServices.changedToRead(this.email.id);
+ 
+        }
+    },
     components:{
-        // emailDetails
+        emailDetails
     }
 };

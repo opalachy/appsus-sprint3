@@ -1,0 +1,14 @@
+.car-list {
+    padding: 10px;
+    background-color: darkcyan;
+}
+
+
+/* UNUSED, JUST SAMPLES */
+.car-list p{
+    color: red;
+}
+
+.car-list .active {
+    color:darkgoldenrod
+}

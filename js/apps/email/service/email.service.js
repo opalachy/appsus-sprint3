@@ -8,7 +8,11 @@ import { Utils } from '../../../service/utils.service.js';
 export const emailServices = {
     getEmails,
     _saveEmailsToStorage,
-    getById
+    getById,
+    getNextEmailId,
+    changedToRead
+    // _changedToNotRead
+
 }
 
 function createEmails() {
@@ -47,6 +51,20 @@ function _createEmail(subject, body) {
         isRead: false,
         sentAt: new Date
     }
+}
+function changedToRead(emailId) {
+    var idx = gEmails.findIndex(email =>email.id === emailId);
+    gEmails[idx].isRead = true
+    _saveEmailsToStorage();
+    return gEmails
+}
+
+
+function getNextEmailId(emailId) {
+    var idx = gEmails.findIndex(email =>email.id === emailId)
+    if (idx === gEmails.length-1 ) idx = 0
+    else idx = idx + 1;
+    return Promise.resolve(gEmails[idx].id)
 }
 
 // function saveEmail(email) {
