@@ -12,7 +12,8 @@ export const emailServices = {
     getNextEmailId,
     changedToRead,
     changedToNotRead,
-    RemoveEmail
+    RemoveEmail,
+    logNewEmail
 
 }
 
@@ -20,13 +21,18 @@ function createEmails() {
     var emails = Utils.loadFromStorage(KEY)
     if (!emails || !emails.length) {
         for (var i = 0; i < 5; i++) {
-           newEmails.push(_createEmail());
+            newEmails.push(_createEmail());
         }
         gEmails = newEmails;
-    }else gEmails = emails;
+    } else gEmails = emails;
     console.log(gEmails)
     _saveEmailsToStorage();
     return gEmails
+}
+
+function logNewEmail(email){
+    gEmails.unshift(email);
+    _saveEmailsToStorage();
 }
 
 function getEmails() {
@@ -47,20 +53,24 @@ function _createEmail(subject, body) {
     if (!body) body = Utils.loremIpsum(10, 100);
     return {
         id: Utils.getRandomId(),
+        to: 'Yossi',
+        cc: 'Puki',
+        bcc: 'Muki',
         subject: subject,
         body: body,
         isRead: false,
         sentAt: new Date
     }
 }
+
 function changedToRead(emailId) {
-    var idx = gEmails.findIndex(email =>email.id === emailId);
+    var idx = gEmails.findIndex(email => email.id === emailId);
     gEmails[idx].isRead = true
     _saveEmailsToStorage();
     return gEmails
 }
 function changedToNotRead(emailId) {
-    var idx = gEmails.findIndex(email =>email.id === emailId);
+    var idx = gEmails.findIndex(email => email.id === emailId);
     gEmails[idx].isRead = false
     _saveEmailsToStorage();
     return gEmails
@@ -68,8 +78,8 @@ function changedToNotRead(emailId) {
 
 
 function getNextEmailId(emailId) {
-    var idx = gEmails.findIndex(email =>email.id === emailId)
-    if (idx === gEmails.length-1 ) idx = 0
+    var idx = gEmails.findIndex(email => email.id === emailId)
+    if (idx === gEmails.length - 1) idx = 0
     else idx = idx + 1;
     return Promise.resolve(gEmails[idx].id)
 }
@@ -82,10 +92,10 @@ function getNextEmailId(emailId) {
 
 
 function RemoveEmail(emailId) {
-  var emailIdx = gEmails.findIndex(function (email) {
-      return emailId === email.id;
-  });
-  gEmails.splice(emailIdx, 1);
-  _saveEmailsToStorage();
+    var emailIdx = gEmails.findIndex(function (email) {
+        return emailId === email.id;
+    });
+    gEmails.splice(emailIdx, 1);
+    _saveEmailsToStorage();
 }
 
