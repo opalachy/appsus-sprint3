@@ -1,33 +1,24 @@
 .Palette{
     width: 200px;
-    height: 100px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: white;
+
     }
     
+    .note-list div .Palette{
+      background-color: white;
+      margin: 0 auto;
+
+    }
     .Palette .color{
         width: 20px;
         height: 20px;
         border-radius: 50%;
-        /* background-color: violet; */
+        border: 2px solid black;
+       
     }
-    /* .blue{
-        background-color: blue;
+    .Palette .color:hover{
+        cursor: pointer;
     }
-    .teal{
-        background-color: teal;
-    }
-    .red{
-        background-color: tomato;
-    }
-    .pink{
-        background-color: pink;
-    }    
-    .orange{
-        background-color: orange;
-    }
-    .default{
-        background-color: gray;
-    } */

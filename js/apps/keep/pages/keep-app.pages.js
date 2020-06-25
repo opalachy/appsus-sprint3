@@ -9,10 +9,9 @@ import colorPicker from '../cmps/color-picker.cmp.js';
 export default {
     template: `
     <main>
-        <h1>Hello keep App</h1>
-        <note-add @onAddNote="addNote"></note-add>
         <note-search @filtered="setFilter"></note-search>
-        <!-- <color-picker></color-picker> -->
+        <h1>Hello keep App</h1>
+        <note-add @onAddNote="addNote"></note-add>  
         <note-list class="flex wrap" v-on:click="selectNote" :notes="notesToShow"></note-list>
     </main>   
 `,
@@ -32,11 +31,11 @@ export default {
     created() {
         keepServices.getNotes()
             .then(notes => {
-                console.log(notes);
                 this.notes = notes;
             })
     },
     methods: {
+        //to service
             addNote(note) {
                 note.id = Utils.getRandomId()
                 this.notes.push(note)
@@ -47,9 +46,7 @@ export default {
                 this.filterBy = filterBy;
             },
             selectNote(note) {
-                this.currNote = note;
-                console.log('selected', this.currNote);
-                
+                this.currNote = note;   
             }
     },
     computed: {
@@ -57,9 +54,32 @@ export default {
                 const filterBy = this.filterBy;
                 if (!filterBy) return this.notes;
                 var filteredNotes = this.notes;
+                if (filterBy.searchByType) {
+                    filteredNotes = filteredNotes.filter(note => {
+                        return (note.type.toLowerCase().includes(filterBy.searchByType.toLowerCase()));
+                    });
+                }
                 if (filterBy.searchByTitle) {
-                    filteredNotes = filteredNotes.filter(notes => {
-                        return (notes.type.toLowerCase().includes(filterBy.searchByTitle.toLowerCase()));
+                    filteredNotes = filteredNotes.filter(note => {
+                        let noteType = note.type;
+                        let uQuery = filterBy.searchByTitle.toLowerCase();
+                        if (noteType === "NoteText") {
+                            return note.info.txt.toLowerCase().includes(uQuery);
+                        }
+                        if (noteType === "NoteImg") {
+                            if (note.info.title === undefined) return false;
+                            return note.info.title.toLowerCase().includes(uQuery);
+                        }
+                        if (noteType === "NoteVideo") {
+                            if (note.info.title === undefined) return false;
+                            return note.info.title.toLowerCase().includes(uQuery);
+                        }
+                        if (noteType === "NoteTodos") {
+                            let todos = note.info.todos;
+                            // let searchableText = '';
+                            let filteredTodos = todos.filter(todo => todo.txt.toLowerCase().includes(uQuery))
+                            return filteredTodos.length > 0;
+                        }
                     });
                 }
                 return filteredNotes;

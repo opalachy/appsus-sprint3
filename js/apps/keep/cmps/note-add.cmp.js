@@ -3,7 +3,7 @@
 // import NoteTodos from '../cmps/note-todos.cmp.js'
 // import NoteVideo from '../cmps/note-video.cmp.js'
 
-
+//to pages
 export default{
     template:`
     <section class="add-note">
@@ -21,7 +21,9 @@ export default{
     },
    
     methods:{
-        addNote: function(noteType){
+        //from service
+        //fix == to  ===
+        addNote(noteType){
             var newNote = {};
             newNote.type = noteType;
             newNote.info = {};
@@ -41,6 +43,7 @@ export default{
             
             console.log('calling emit', newNote);
             this.$emit('onAddNote', newNote);
+            this.inputValue = ''
         }
     }
 }

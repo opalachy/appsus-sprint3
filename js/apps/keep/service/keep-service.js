@@ -12,9 +12,6 @@ export const keepServices = {
     RemoveNote
 }
 
-
-
-
 function createNotes() {
     var notes = Utils.loadFromStorage(KEY)
     if (!notes || !notes.length) {
@@ -24,8 +21,8 @@ function createNotes() {
           type: "NoteText",
           isPinned: true,
           info: {
-          txt: "Fullstack Me Baby!"
-      }
+              txt: "Fullstack Me Baby!"
+          }
       },
       {
           id: Utils.getRandomId(),
@@ -39,12 +36,12 @@ function createNotes() {
           id: Utils.getRandomId(),        
           type: "NoteImg",
           info: {
-          url: "img/humor.jpg",
-          title: "Me playing Mi"
-      },
-        style: {
-          backgroundColor: "#00d"
-      }
+              url: "img/humor.jpg",
+              title: "Me playing Mi"
+          },
+          style: {
+            backgroundColor: "#00d"
+          }
       },
       {
           id: Utils.getRandomId(),
@@ -74,7 +71,7 @@ function createNotes() {
           info: {
             label: "How was it:",
             todos: [
-                { txt: "Do that", doneAt: null },
+                { txt: "Do that",  doneAt: null },
                 { txt: "Do this", doneAt: Date.now() }
             ]
           }
@@ -100,9 +97,7 @@ function getNotes() {
 
   
 function RemoveNote(noteId) {
-  var noteIdx = gNote.findIndex(function (note) {
-      return noteId === note.id;
-  });
+  var noteIdx = gNote.findIndex(note => noteId === note.id);
    gNote.splice(noteIdx, 1);
    saveNoteToStorage()
 }
