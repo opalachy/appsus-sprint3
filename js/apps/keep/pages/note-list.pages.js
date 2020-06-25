@@ -2,6 +2,7 @@ import notePreview from '../cmps/note-preview.cmp.js'
 import NoteText from '../cmps/note-text.cmp.js'
 import NoteImg from '../cmps/note.img.cmp.js'
 import NoteTodos from '../cmps/note-todos.cmp.js'
+import NoteVideo from '../cmps/note-video.cmp.js'
 
 export default{
      props:['notes'],
@@ -18,7 +19,8 @@ export default{
         notePreview,
         NoteText,
         NoteImg,
-        NoteTodos
+        NoteTodos,
+        NoteVideo
 
     },
     methods:{

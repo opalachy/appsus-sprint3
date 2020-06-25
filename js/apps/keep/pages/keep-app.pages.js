@@ -1,12 +1,14 @@
 // import noteSearch from '../cmp/note-search.cmp.js'
 import { keepServices } from '../../keep/service/keep-service.js';
 import noteSearch from '../cmps/note-search.cmp.js';
+import noteAdd from '../cmps/note-add.cmp.js';
 import noteList from './note-list.pages.js';
 
 export default {
     template: `
     <main>
         <h1>Hello keep App</h1>
+        <note-add></note-add>
         <note-search  @filtered="setFilter"></note-search>
         <note-list  :notes="notesToShow"></note-list>
     </main>   
@@ -20,7 +22,8 @@ export default {
     },
     components:{
         noteSearch,
-        noteList
+        noteList,
+        noteAdd
     },
     created() {
         keepServices.getNotes()
