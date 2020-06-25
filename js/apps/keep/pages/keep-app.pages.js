@@ -8,9 +8,9 @@ export default {
     template: `
     <main>
         <h1>Hello keep App</h1>
-        <note-add></note-add>
-        <note-search  @filtered="setFilter"></note-search>
-        <note-list  :notes="notesToShow"></note-list>
+        <note-add @onAddNote="addNote"></note-add>
+        <note-search @filtered="setFilter"></note-search>
+        <note-list class="flex wrap" :notes="notesToShow"></note-list>
     </main>   
 `,
     data(){
@@ -33,12 +33,19 @@ export default {
             })
     },
     methods: {
+            addNote(note) {
+                this.notes.push(note)
+                keepServices.saveNoteToStorage()
+                keepServices.getNotes()
+            },
             setFilter(filterBy) {
                 this.filterBy = filterBy;
             },
-            // selectNote(note) {
-            //     this.currNote = note;
-            // }
+            selectNote(note) {
+                this.currNote = note;
+                console.log('selected', this.currNote);
+                
+            }
     },
     computed: {
             notesToShow() {

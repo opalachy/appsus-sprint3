@@ -1,25 +1,51 @@
+// import NoteText from '../cmps/note-text.cmp.js'
+// import NoteImg from '../cmps/note.img.cmp.js'
+// import NoteTodos from '../cmps/note-todos.cmp.js'
+// import NoteVideo from '../cmps/note-video.cmp.js'
+
+
 export default{
     template:`
     <section class="add-note">
-        <input type="text"/>
-        <button v-on:click="log('NoteVideo')">txt</button>
-        <!-- <button @onclick="log()" @:key="note.type.NoteVideo">video</button>
-        <button @onclick="log()" @:key="note.type.NoteImg">img</button>
-        <button @onclick="log()" @:key="note.type.NoteTodos">todo list</button> -->
-    </section>
+            <input type="text" v-model="inputValue" placeholder="text"/>
+            <button v-on:click="addNote('NoteText')">text</button>
+            <button v-on:click="addNote('NoteVideo')">video</button>
+            <button v-on:click="addNote('NoteImg')">image</button>
+            <button v-on:click="addNote('NoteTodos')">todo</button>
+        </section>
     `,
     data(){
         return{
-            mapper:{
-                txt: "NoteText"
-            }
+            inputValue: '',
         }
     },
+   
     methods:{
-        log: function(component){
-            console.log(component);
+        addNote: function(noteType){
+            var newNote = {};
+            newNote.type = noteType;
+            newNote.info = {};
+            if(this.inputValue === '')return
+            if (noteType == 'NoteText') {
+                newNote.info.txt = this.inputValue;
+            }
+            else if (noteType == 'NoteVideo') {
+                newNote.info.url = this.inputValue;
+            }
+            else if (noteType == 'NoteImg') {
+                newNote.info.url = this.inputValue;
+            }
+            // else {
+            //     newNote.info.todo = this.inputValue;
+            // }
             
+            console.log('calling emit', newNote);
+            this.$emit('onAddNote', newNote);
         }
     }
 }
 
+
+// "NoteImg"
+// NoteVideo
+// NoteTodos
