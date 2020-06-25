@@ -10,8 +10,8 @@ export const emailServices = {
     _saveEmailsToStorage,
     getById,
     getNextEmailId,
-    changedToRead
-    // _changedToNotRead
+    changedToRead,
+    changedToNotRead
 
 }
 
@@ -55,6 +55,12 @@ function _createEmail(subject, body) {
 function changedToRead(emailId) {
     var idx = gEmails.findIndex(email =>email.id === emailId);
     gEmails[idx].isRead = true
+    _saveEmailsToStorage();
+    return gEmails
+}
+function changedToNotRead(emailId) {
+    var idx = gEmails.findIndex(email =>email.id === emailId);
+    gEmails[idx].isRead = false
     _saveEmailsToStorage();
     return gEmails
 }
