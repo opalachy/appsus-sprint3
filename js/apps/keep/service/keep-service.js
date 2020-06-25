@@ -35,6 +35,16 @@ function createNotes() {
     }
     },
     {
+        type: "NoteVideo",
+        info: {
+        url: "https://www.youtube.com/watch?v=yYDmaexVHic",
+        title: "some video"
+    },
+      style: {
+        backgroundColor: "#00d"
+    }
+    },
+    {
         type: "NoteTodos",
         info: {
         label: "How was it:",
