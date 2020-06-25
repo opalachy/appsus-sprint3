@@ -5,8 +5,8 @@ export default {
             <input type="text" placeholder="Search By Subject" v-model="filterBy.searchBySubject" @input="filter"/>
             <select v-model="filterBy.isRead" @input="filter">
             <option >All</option>
-            <option >Read</option>
-            <option >Not Read</option>
+            <option>Read</option>
+            <option>Not Read</option>
             </select>
         </section>
     `,

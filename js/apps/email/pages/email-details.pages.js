@@ -12,6 +12,7 @@ export default {
                 <router-link v-if="nextEmailId" :to="'/email/' + nextEmailId">Next Email</router-link>    
                 <router-link to="/email">Back</router-link>
                 <button @click="close">Back</button>
+                <button @click="deleteEmail">Delete</button>
         </section>
     `,
     data() {
@@ -37,6 +38,10 @@ export default {
                             this.nextEmailId = emailId;
                         })
                 })
+        },
+        deleteEmail(){
+            emailServices.RemoveEmail(this.email.id);
+            this.$router.back()
         }
 
     },

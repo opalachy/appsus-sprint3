@@ -11,7 +11,8 @@ export const emailServices = {
     getById,
     getNextEmailId,
     changedToRead,
-    changedToNotRead
+    changedToNotRead,
+    RemoveEmail
 
 }
 
@@ -80,13 +81,11 @@ function getNextEmailId(emailId) {
 
 
 
-// function onRemoveEmail(emailId) {
-//   var emailIdx = gEmails.findIndex(function (email) {
-//       return emailId === email.id;
-//   });
-//   gEmails.splice(emailIdx, 1);
-//   _saveEmailsToStorage();
-//   renderTableOfEmails();
-//   pageOfPage();
-// }
+function RemoveEmail(emailId) {
+  var emailIdx = gEmails.findIndex(function (email) {
+      return emailId === email.id;
+  });
+  gEmails.splice(emailIdx, 1);
+  _saveEmailsToStorage();
+}
 

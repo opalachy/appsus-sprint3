@@ -1,10 +1,18 @@
 
 .bold{
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 1rem;
 }
 
 .normal{
     font-weight: normal;
-    font-size: 0.5rem;
+    font-size: 1rem;
+}
+
+.email-preview{
+    border: 1px solid black;
+}
+
+.email-preview:nth-of-type(1){
+ margin-top: 10px;
 }
