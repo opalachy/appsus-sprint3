@@ -4,14 +4,34 @@ import { emailServices } from "../../email/service/email.service.js";
 export default {
     template: `
         <section class="email-details" v-if="email">
-                <h2>{{email.subject}}</h2>
-                <h2>{{email.body}}</h2>
-                <h2>{{email.sentAt}}</h2>
-                <pre>{{email}}</pre>
+                <section>
+                        <form class="email-compose flex">
+                            <label class="first" for="Email">Email</label>
+                            <div>
+                            <label for="to">To:</label>
+                            <input type="email" v-model="email.to"/>
+                            </div>
+                            <div>
+                            <label for="Cc">Cc:</label>
+                            <input type="text" v-model="email.cc"/>
+                            </div>
+                            <div>
+                            <label for="Bcc">Bcc:</label>
+                            <input type="text" v-model="email.bcc"/>
+                            </div>
+                            <div>
+                            <label for="Subject">Subject:</label>
+                            <input type="text" v-model="email.subject"/>
+                            </div>
+                            <div>
+                            <textarea class="last" type="text" v-model="email.body"></textarea>
+                            </div>
+                        </form>
+                </section>
 
                 <router-link v-if="nextEmailId" :to="'/email/' + nextEmailId">Next Email</router-link>    
                 <router-link to="/email">Back</router-link>
-                <button @click="close">Back</button>
+                <button @click="close">Undo</button>
                 <button @click="deleteEmail">Delete</button>
         </section>
     `,
@@ -33,21 +53,20 @@ export default {
             emailServices.getById(emailId)
                 .then(email => {
                     this.email = email;
-                    emailServices.getNextEmailId(this.email.id)
+                    emailServices.getNextEmail(this.email.id)
                         .then(emailId => {
                             this.nextEmailId = emailId;
                         })
                 })
         },
         deleteEmail(){
-            emailServices.RemoveEmail(this.email.id);
+            emailServices.removeEmail(this.email.id);
             this.$router.back()
         }
 
     },
     watch: {
         '$route.params.emailId'(newEmailId) {
-            console.log('EMAIL ID CHANGED IN ROUTE', newEmailId);
             this.loadEmail();
         }
     }

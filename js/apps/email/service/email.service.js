@@ -1,6 +1,5 @@
 'use strict'
 const KEY = 'emails'
-var newEmails = [];
 var gEmails = createEmails();
 
 import { Utils } from '../../../service/utils.service.js';
@@ -9,16 +8,17 @@ export const emailServices = {
     getEmails,
     _saveEmailsToStorage,
     getById,
-    getNextEmailId,
-    changedToRead,
-    changedToNotRead,
-    RemoveEmail,
-    logNewEmail
+    getNextEmail,
+    markRead,
+    markNotRead,
+    removeEmail,
+    sendEmail
 
 }
 
 function createEmails() {
     var emails = Utils.loadFromStorage(KEY)
+    const newEmails = []; 
     if (!emails || !emails.length) {
         for (var i = 0; i < 5; i++) {
             newEmails.push(_createEmail());
@@ -30,7 +30,7 @@ function createEmails() {
     return gEmails
 }
 
-function logNewEmail(email){
+function sendEmail(email){
     gEmails.unshift(email);
     _saveEmailsToStorage();
 }
@@ -43,7 +43,7 @@ function _saveEmailsToStorage() {
     Utils.storeToStorage(KEY, gEmails)
 }
 
-function getById(emailId) {
+function getById(emailId) { //to add a case for not finding an ID
     const email = gEmails.find(email => email.id === emailId)
     return Promise.resolve(email)
 }
@@ -53,9 +53,9 @@ function _createEmail(subject, body) {
     if (!body) body = Utils.loremIpsum(10, 100);
     return {
         id: Utils.getRandomId(),
-        to: 'Yossi',
-        cc: 'Puki',
-        bcc: 'Muki',
+        to: 'Yossi@gmail.com',
+        cc: 'Puki@gmail.com',
+        bcc: 'Muki@gmail.com',
         subject: subject,
         body: body,
         isRead: false,
@@ -63,13 +63,13 @@ function _createEmail(subject, body) {
     }
 }
 
-function changedToRead(emailId) {
+function markRead(emailId) { 
     var idx = gEmails.findIndex(email => email.id === emailId);
     gEmails[idx].isRead = true
     _saveEmailsToStorage();
     return gEmails
 }
-function changedToNotRead(emailId) {
+function markNotRead(emailId) {
     var idx = gEmails.findIndex(email => email.id === emailId);
     gEmails[idx].isRead = false
     _saveEmailsToStorage();
@@ -77,21 +77,15 @@ function changedToNotRead(emailId) {
 }
 
 
-function getNextEmailId(emailId) {
+function getNextEmail(emailId) { 
     var idx = gEmails.findIndex(email => email.id === emailId)
     if (idx === gEmails.length - 1) idx = 0
     else idx = idx + 1;
     return Promise.resolve(gEmails[idx].id)
 }
 
-// function saveEmail(email) {
-//     email.id = Utils.getRandomId();
-//     gEmails.unshift(email);
-// }
 
-
-
-function RemoveEmail(emailId) {
+function removeEmail(emailId) {
     var emailIdx = gEmails.findIndex(function (email) {
         return emailId === email.id;
     });
