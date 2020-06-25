@@ -1,0 +1,8 @@
+.email-container{
+    display: flex;
+    flex-wrap: wrap;
+    height: 5vh;
+    background-color: rgb(145, 255, 0);
+    justify-content: space-around;
+}
+

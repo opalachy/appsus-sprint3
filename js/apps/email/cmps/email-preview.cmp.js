@@ -1,21 +1,33 @@
 
- import { emailServices } from "../../email/service/email.service.js";
+import { emailServices } from "../../email/service/email.service.js";
 
 
 
 export default {
     props: ['email'],
     template: `
-        <div class="email-preview">
-        <pre>New Email</pre>
-        <pre :class="isRead"> Sent At: {{email.sentAt}} </pre>
-        <pre :class="isRead"> Subject: {{email.subject}} </pre>
-        <pre :class="isRead" class="last"> {{email.body.substring(0, 30) + '...'}} </pre>
-        <router-link @click.native="wasRead" :to="'/email/' + email.id + '/' + email.subject">Open Email</router-link> | 
-
-        <button @click="markNotRead">Mark Not Read</button>
-        <button @click="wasRead">Mark Read</button>
-        <button @click="deleteEmail">Delete</button>
+        <div class="email-preview" flex wrap>
+     
+        <div>
+                    <form class="email-preview flex">
+                        <div>
+                        <label :class="isRead" for="to">To:</label>
+                        <input :class="isRead" type="email" v-model="email.to"/>
+                        </div>
+                        <div>
+                        <label :class="isRead" for="Subject">Subject:</label>
+                        <input :class="isRead" type="text" v-model="email.subject"/> 
+                        </div>
+                        <div>
+                        <textarea :class="isRead" class="preview-last"  type="text">{{email.body.substring(0, 100) + '...'}}</textarea>
+                        </div>
+                    </form>
+        </div>
+            <router-link @click.native="wasRead" :to="'/email/' + email.id + '/' + email.subject">Open Email</router-link> | 
+            <button @click="markNotRead">Mark Not Read</button>
+            <button @click="wasRead">Mark Read</button>
+            <button @click="deleteEmail">Delete</button>
+            <button @click="markStar">Star</button> //need to add function
         </div>
     `,
     data() {
@@ -24,19 +36,19 @@ export default {
         }
     },
     computed: {
-        isRead(){
-            return (this.email.isRead)? 'normal': 'bold';
+        isRead() {
+            return (this.email.isRead) ? 'normal' : 'bold';
         }
-      
+
     },
-    methods:{
-        wasRead(){
-            emailServices.changedToRead(this.email.id);
+    methods: { //to move the functions to the parent
+        wasRead() {
+            emailServices.markRead(this.email.id);
         },
-        markNotRead(){
-            emailServices.changedToNotRead(this.email.id);
+        markNotRead() {
+            emailServices.markNotRead(this.email.id);
         },
-        deleteEmail(){
+        deleteEmail() {
             emailServices.RemoveEmail(this.email.id);
         }
     }

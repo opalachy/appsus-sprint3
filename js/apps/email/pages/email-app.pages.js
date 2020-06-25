@@ -30,8 +30,8 @@ export default {
         setFilter(filterBy) {
             this.filterBy = filterBy;
         },
-        setCompose(set){
-            this.isCompose = set
+        setCompose(isSet){ 
+            this.isCompose = isSet
         }
 
     },
