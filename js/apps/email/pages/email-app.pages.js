@@ -2,17 +2,19 @@
 import { emailServices } from '../service/email.service.js'
 import emailList from '../cmps/email-list.cmp.js';
 import emailFilter from '../cmps/email-filiter.cmp.js';
+import emailCompose from '../cmps/email-compose.cmp.js';
 
 export default {
     template: `
     <main class="email-app">
-        <h1>Hello</h1>
-        <email-filter @filtered="setFilter" ></email-filter>
-        <email-list :emails="emailsToShow" ></email-list >
+        <email-compose @clicked="setCompose" > Compose</email-compose>
+        <email-filter v-if="isCompose" @filtered="setFilter" ></email-filter>
+        <email-list v-if="isCompose" :emails="emailsToShow" ></email-list >
     </main>   
 `,
     data() {
         return {
+            isCompose: true,
             emails: [],
             currEmail: null,
             filterBy: null
@@ -27,6 +29,9 @@ export default {
     methods: {
         setFilter(filterBy) {
             this.filterBy = filterBy;
+        },
+        setCompose(set){
+            this.isCompose = set
         }
 
     },
@@ -57,6 +62,7 @@ export default {
     },
     components: {
         emailFilter,
-        emailList
+        emailList,
+        emailCompose
     }
 }
