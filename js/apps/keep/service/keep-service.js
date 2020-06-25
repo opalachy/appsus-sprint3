@@ -8,7 +8,8 @@ var gNote = createNotes();
 export const keepServices = {
     getNotes,
     createNotes,
-    saveNoteToStorage
+    saveNoteToStorage,
+    RemoveNote
 }
 
 
@@ -19,6 +20,7 @@ function createNotes() {
     if (!notes || !notes.length) {
       notes = [
       {
+          id: Utils.getRandomId(),
           type: "NoteText",
           isPinned: true,
           info: {
@@ -26,6 +28,7 @@ function createNotes() {
       }
       },
       {
+          id: Utils.getRandomId(),
           type: "NoteText",
           isPinned: true,
           info: {
@@ -33,6 +36,7 @@ function createNotes() {
       }
       },
       {
+          id: Utils.getRandomId(),        
           type: "NoteImg",
           info: {
           url: "img/humor.jpg",
@@ -43,6 +47,7 @@ function createNotes() {
       }
       },
       {
+          id: Utils.getRandomId(),
           type: "NoteVideo",
           info: {
           url: "https://www.youtube.com/watch?v=yYDmaexVHic",
@@ -53,6 +58,7 @@ function createNotes() {
       }
       },
       {
+          id: Utils.getRandomId(),
           type: "NoteVideo",
           info: {
           url: "https://www.youtube.com/watch?v=FOyuZXUkawg",
@@ -63,6 +69,7 @@ function createNotes() {
       }
       },
       {
+          id: Utils.getRandomId(),
           type: "NoteTodos",
           info: {
             label: "How was it:",
@@ -89,3 +96,14 @@ function getNotes() {
   function saveNoteToStorage() {
     Utils.storeToStorage(KEY, gNote)
   }
+
+
+  
+function RemoveNote(noteId) {
+  var noteIdx = gNote.findIndex(function (note) {
+      return noteId === note.id;
+  });
+   gNote.splice(noteIdx, 1);
+   saveNoteToStorage()
+}
+

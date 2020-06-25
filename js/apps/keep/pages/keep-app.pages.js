@@ -1,8 +1,10 @@
 // import noteSearch from '../cmp/note-search.cmp.js'
 import { keepServices } from '../../keep/service/keep-service.js';
+import {Utils} from '../../../service/utils.service.js';
 import noteSearch from '../cmps/note-search.cmp.js';
 import noteAdd from '../cmps/note-add.cmp.js';
 import noteList from './note-list.pages.js';
+import colorPicker from '../cmps/color-picker.cmp.js';
 
 export default {
     template: `
@@ -10,7 +12,8 @@ export default {
         <h1>Hello keep App</h1>
         <note-add @onAddNote="addNote"></note-add>
         <note-search @filtered="setFilter"></note-search>
-        <note-list class="flex wrap" :notes="notesToShow"></note-list>
+        <!-- <color-picker></color-picker> -->
+        <note-list class="flex wrap" v-on:click="selectNote" :notes="notesToShow"></note-list>
     </main>   
 `,
     data(){
@@ -23,7 +26,8 @@ export default {
     components:{
         noteSearch,
         noteList,
-        noteAdd
+        noteAdd,
+        colorPicker
     },
     created() {
         keepServices.getNotes()
@@ -34,6 +38,7 @@ export default {
     },
     methods: {
             addNote(note) {
+                note.id = Utils.getRandomId()
                 this.notes.push(note)
                 keepServices.saveNoteToStorage()
                 keepServices.getNotes()

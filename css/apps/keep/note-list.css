@@ -7,6 +7,10 @@
 }
 .note-list img{
     width: 250px    ;
-    /* height: 80%; */
+}
+
+.note-list div{
+    background-color: gray;
+    margin: 5px;
     
 }

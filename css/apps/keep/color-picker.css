@@ -1,0 +1,33 @@
+.Palette{
+    width: 200px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: white;
+    }
+    
+    .Palette .color{
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        /* background-color: violet; */
+    }
+    /* .blue{
+        background-color: blue;
+    }
+    .teal{
+        background-color: teal;
+    }
+    .red{
+        background-color: tomato;
+    }
+    .pink{
+        background-color: pink;
+    }    
+    .orange{
+        background-color: orange;
+    }
+    .default{
+        background-color: gray;
+    } */

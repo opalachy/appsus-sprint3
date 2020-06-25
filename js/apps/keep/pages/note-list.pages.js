@@ -9,7 +9,7 @@ export default{
      template:`
     <ul class="note-list">
         <div  class="flex " v-for="(note,idx) in notes" v-bind:key="idx" :note="note">
-           <component :list="listId" @click.native="editNote" :is="note.type" :info="note.info"></component>
+           <component :list="listId"  :is="note.type" :info="note.info" :note="note"></component>
         </div>
     </ul>
     `,
@@ -23,10 +23,10 @@ export default{
 
     },
     methods:{
-        editNote: function(event){
-            console.log('edit',event);
+        // editNote: function(event){
+        //     console.log('edit', event.target);
             
-        }
+        // }
         
     },
 
