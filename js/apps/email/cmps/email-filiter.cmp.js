@@ -12,7 +12,7 @@ export default {
                 <div class="box">Inbox</div>
                 <div class="box">Stars</div>
                 <div class="box">Draft</div>
-                <div class="box">Delet</div>
+                <div class="box">Delete</div>
             </div>
         </section>
     `,

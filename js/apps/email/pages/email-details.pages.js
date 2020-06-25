@@ -31,7 +31,7 @@ export default {
 
                 <router-link v-if="nextEmailId" :to="'/email/' + nextEmailId">Next Email</router-link>    
                 <router-link to="/email">Back</router-link>
-                <button @click="close">Back</button>
+                <button @click="close">Undo</button>
                 <button @click="deleteEmail">Delete</button>
         </section>
     `,

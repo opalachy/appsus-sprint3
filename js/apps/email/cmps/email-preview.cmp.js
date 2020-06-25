@@ -1,7 +1,7 @@
 
 import { emailServices } from "../../email/service/email.service.js";
 
-
+ // <button @click="markStar">Star</button> //need to add function
 
 export default {
     props: ['email'],
@@ -27,7 +27,7 @@ export default {
             <button @click="markNotRead">Mark Not Read</button>
             <button @click="wasRead">Mark Read</button>
             <button @click="deleteEmail">Delete</button>
-            <button @click="markStar">Star</button> //need to add function
+           
         </div>
     `,
     data() {
