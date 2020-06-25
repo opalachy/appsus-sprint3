@@ -4,8 +4,9 @@ export default {
         <section class="email-filter">
             <input type="text" placeholder="Search By Subject" v-model="filterBy.searchBySubject" @input="filter"/>
             <select v-model="filterBy.isRead" @input="filter">
-            <option :value="true">Read</option>
-            <option :value="false">Not Read</option>
+            <option >All</option>
+            <option >Read</option>
+            <option >Not Read</option>
             </select>
         </section>
     `,
@@ -13,7 +14,7 @@ export default {
         return {
             filterBy: {
                 searchBySubject:'',
-                isRead: false
+                isRead: 'All'
             }
         }
     },

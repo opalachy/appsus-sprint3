@@ -6,10 +6,27 @@ var gCars = createCars();
 
 
 
-export const CarService = {
+export const carService = {
     getCars,
-    saveCar
+    getById,
+    saveCar,
+    getEmptyCar 
 }
+
+function getById(carId) {
+    return gCars.find(car =>car.id === carId)
+}
+
+function getEmptyCar() {
+    return {
+        vendor: '',
+        speed: 20,
+        isAuto: false,
+        features: [],
+        model: [2005]
+    };
+}
+
 
 function createCars() {
     return  [

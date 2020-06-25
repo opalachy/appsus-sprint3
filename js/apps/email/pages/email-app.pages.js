@@ -28,9 +28,7 @@ export default {
         setFilter(filterBy) {
             this.filterBy = filterBy;
         }
-        // selectBook(book) {
-        //     this.currBook = book;
-        // }
+
     },
     computed: {
         emailsToShow() {
@@ -45,10 +43,11 @@ export default {
                 });
             }
 
-            if (filterBy.isRead) {
+            if (filterBy.isRead !== 'All') {
+               const stateRead = (filterBy.isRead === 'Read')? true: false;
                 
                 filteredEmails = filteredEmails.filter(email => {
-                    return email.isRead === filterBy.isRead;
+                    return email.isRead === stateRead;
                 });
             }
             return filteredEmails;
