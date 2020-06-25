@@ -1,0 +1,43 @@
+label.first{
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+}
+label{
+    border: 1px solid black;
+}
+.email-compose{
+    flex-direction: column;
+}
+
+form{
+    border: 0.3rem solid black;
+    max-width: 500px;
+
+}
+form div{
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+label{
+flex-grow: 1;
+}
+.last{
+    flex-grow: 4;
+    min-height: 300px;
+    width: 500px;
+    margin: 0;
+    size: 500;
+}
+input{
+    flex-grow: 4;
+    min-height: 10px;
+    margin: 0;
+}
+textarea{
+    flex-grow: 4;
+    min-height: 10px;
+    margin: 0;
+
+}
