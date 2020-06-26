@@ -11,13 +11,16 @@ new Vue({
     <div>
         
        <header>
-         <nav>
-           
+         <nav class="main-navbar flex wrap align-center space-between">
+            <div>
+            <h1>Appsus</h1>
+            </div>
+            <div>
             <router-link to="/book">Book Profile</router-link> |
             <router-link to="/books">Books App</router-link> | 
             <router-link to="/email">Email App</router-link> | 
-            <router-link to="/keep">Keep App</router-link> | 
-           
+            <router-link to="/keep">Keep App</router-link> 
+            </div>
         </nav>
       </header>
       <main>

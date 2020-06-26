@@ -12,7 +12,7 @@ export default {
                 <div class="box" @click="setInbox">Inbox</div>
                 <div class="box" @click="setStars">Stars</div>
                 <div class="box" @click="setDraft">Draft</div>
-                <div class="box" @click="setDelete">Delete</div>
+                <div class="box" @click="setDelete"><i class="fa fa-trash" aria-hidden="true"></i></div>
             </div>
         </section>
     `,
@@ -63,4 +63,3 @@ export default {
     }
 }
 
-///add inbox, stared, trashed and sent items

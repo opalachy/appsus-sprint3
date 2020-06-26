@@ -22,10 +22,10 @@ export default {
                     </form>
         </div>
             <router-link @click.native="wasRead" :to="'/email/' + email.id + '/' + email.subject">Open Email</router-link> | 
-            <button @click="markNotRead">Mark Not Read</button>
-            <button @click="wasRead">Mark Read</button>
-            <button @click="deleteEmail">Delete</button>
-            <button :class="isMarkStars" @click="markStar">Star</button>
+            <button @click="markNotRead"><i class="fa fa-envelope-o" aria-hidden="true"></i></button>
+            <button @click="wasRead"><i class="fa fa-envelope-open-o" aria-hidden="true"></i></button>
+            <button @click="deleteEmail"><i class="fa fa-trash" aria-hidden="true"></i></button>
+            <button :class="isMarkStars" @click="markStar"><i class="fa fa-star-o" aria-hidden="true"></i></button>
             <button v-if="set">Recompose</button> 
            
         </div>
