@@ -4,9 +4,9 @@ import { emailServices } from "../../email/service/email.service.js";
 export default {
     template: `
     <section>
-        <button @click="isCompose">Compose</button> 
-        <button @click="isCompose">Safe to Draft</button> 
-        <button @click="isCompose">Back without saving</button> 
+        <button v-if="set" @click="isCompose">Compose</button> 
+        <button v-if="!set" @click="isSaveToDraft">Safe to Draft</button> 
+        <button v-if="!set" @click="isCompose">Back without saving</button> 
         <form v-if="!set" class="email-compose flex">
             <label class="first" v-if="!set" for="to">New Email</label>
             <div>
@@ -60,6 +60,11 @@ export default {
         isCompose() {
             this.set = !this.set;
             this.$emit('clicked', this.set);
+        },
+        isSaveToDraft(){
+            this.email.isDraft = true;
+            this.email.isInbox = false;
+            this.logEmail();
         },
         logEmail() {
             this.set = !this.set;

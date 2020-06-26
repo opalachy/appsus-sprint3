@@ -25,12 +25,13 @@ export default {
             .then(emails => {
                 this.emails = emails;
             })
+
     },
     methods: {
         setFilter(filterBy) {
             this.filterBy = filterBy;
         },
-        setCompose(isSet){ 
+        setCompose(isSet) {
             this.isCompose = isSet
         }
 
@@ -49,12 +50,42 @@ export default {
             }
 
             if (filterBy.isRead !== 'All') {
-               const stateRead = (filterBy.isRead === 'Read')? true: false;
-                
+                const stateRead = (filterBy.isRead === 'Read') ? true : false;
+
                 filteredEmails = filteredEmails.filter(email => {
                     return email.isRead === stateRead;
                 });
             }
+
+            if (filterBy.isDelete) {
+
+                filteredEmails = filteredEmails.filter(email => {
+                    return email.isDelete === true;
+                });
+            }
+
+            if (filterBy.isDraft) {
+
+                filteredEmails = filteredEmails.filter(email => {
+                    return email.isDraft === true && email.isDelete === false;
+                });
+            }
+
+            if (filterBy.isStars) {
+
+                filteredEmails = filteredEmails.filter(email => {
+                    return email.isStars === true && email.isDelete === false;
+                });
+            }
+
+            if (filterBy.isInbox) {
+
+                filteredEmails = filteredEmails.filter(email => {
+                    return email.isDelete === false && email.isDraft === false;
+                });
+            }
+
+
             return filteredEmails;
         }
 

@@ -37,28 +37,28 @@ export default {
             this.filterBy.isStars = false;
             this.filterBy.isDraft = false;
             this.filterBy.isDelete =false;
-            this.filterBy();
+            this.filter();
         },    
         setStars(){
             this.filterBy.isInbox = false;
             this.filterBy.isStars = true;
             this.filterBy.isDraft = false;
             this.filterBy.isDelete =false;
-            this.filterBy();
+            this.filter();
         },    
         setDraft(){
             this.filterBy.isInbox = false;
             this.filterBy.isStars = false;
             this.filterBy.isDraft = true;
             this.filterBy.isDelete =false;
-            this.filterBy();
+            this.filter();
         },    
         setDelete(){
             this.filterBy.isInbox = false;
             this.filterBy.isStars = false;
             this.filterBy.isDraft = false;
             this.filterBy.isDelete =true;
-            this.filterBy();
+            this.filter();
         }    
     }
 }
