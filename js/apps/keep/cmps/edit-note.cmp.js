@@ -2,7 +2,7 @@ import NoteText from '../cmps/note-text.cmp.js'
 import NoteImg from '../cmps/note.img.cmp.js'
 import NoteTodos from '../cmps/note-todos.cmp.js'
 import NoteVideo from '../cmps/note-video.cmp.js'
-
+import { keepServices } from '../../keep/service/keep-service.js';
 export default{
     props:['note'],
     template: `
@@ -10,11 +10,11 @@ export default{
         <div class="modal-mask">
           <div class="modal-wrapper">
             <div class="modal-container">
-            <component :is="note.type" :note="note"></component>
+            <component :is-edit="true" :is="note.type" :note="note"></component>
               <div class="modal-footer">
-                <slot name="footer">
-                  default footer
-                  <button class="modal-default-button" @click="$emit('close')">
+            
+                <!-- <input type="text" value="note.title"/> -->
+                  <button class="modal-default-button" @click="saveEdit()">
                     Edit
                   </button>
                 </slot>
@@ -33,10 +33,19 @@ export default{
               console.log(this.note);
               
           },
+          methods:{
+            saveEdit(){
+              console.log(this.note);
+              keepServices.saveNoteToStorage()
+              this.$emit('close')
+            }
+            
+          },
           components:{
             NoteText,
             NoteImg,
             NoteTodos,
-            NoteVideo
+            NoteVideo,
+            keepServices
           }
 }

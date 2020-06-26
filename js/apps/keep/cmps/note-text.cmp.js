@@ -1,8 +1,12 @@
 
 export default{
-    props:['note'],
+    props:['note', 'isEdit'],
     template:`
-        <li>{{note.info.txt}}</li>
+    <div>
+        <li v-if="!isEdit">{{note.info.txt}}</li>
+        <input v-if="isEdit" type="text" v-model="note.info.txt"/>
+    </div>
+       
      `,
 
 }

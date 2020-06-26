@@ -7,6 +7,6 @@
 @import './apps/keep/color-picker.css';
 @import './apps/email/cmps/email-compose.cmp.css';
 @import './apps/keep/todos.css';
-@import './apps/email/cmps/email-list.cmp.css';
+/* @import './apps/email/cmps/email-list.cmp.css'; */
 @import './apps/keep/edit-note.css';
 @import './apps/email/cmps/email-filter.cmp.css';
