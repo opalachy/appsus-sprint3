@@ -22,33 +22,31 @@ export default{
    
     methods:{
         //from service
-        //fix == to  ===
         addNote(noteType){
             var newNote = {};
             newNote.type = noteType;
             newNote.info = {};
+            newNote.style = {
+                activeColor:'grey',
+            };
+
             if(this.inputValue === '')return
-            if (noteType == 'NoteText') {
+            if (noteType === 'NoteText') {
                 newNote.info.txt = this.inputValue;
             }
-            else if (noteType == 'NoteVideo') {
+            else if (noteType === 'NoteVideo') {
                 newNote.info.url = this.inputValue;
             }
-            else if (noteType == 'NoteImg') {
+            else if (noteType === 'NoteImg') {
                 newNote.info.url = this.inputValue;
             }
-            // else {
-            //     newNote.info.todo = this.inputValue;
-            // }
-            
-            console.log('calling emit', newNote);
+            else {
+                newNote.info.todos = this.inputValue.split(',').map(txt => {return {txt: txt,  doneAt: null}});
+            }
+             
+            // console.log('calling emit', newNote);
             this.$emit('onAddNote', newNote);
             this.inputValue = ''
         }
     }
 }
-
-
-// "NoteImg"
-// NoteVideo
-// NoteTodos

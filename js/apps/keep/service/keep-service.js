@@ -22,6 +22,10 @@ function createNotes() {
           isPinned: true,
           info: {
               txt: "Fullstack Me Baby!"
+          },
+          style: {
+            // backgroundColor: "#00d"
+            activeColor: 'grey'
           }
       },
       {
@@ -30,7 +34,11 @@ function createNotes() {
           isPinned: true,
           info: {
           txt: "Reaminder go to have coffe!"
-      }
+        },
+          style: {
+            // backgroundColor: "#00d"
+            activeColor: 'grey'
+        }
       },
       {
           id: Utils.getRandomId(),        
@@ -40,7 +48,8 @@ function createNotes() {
               title: "Me playing Mi"
           },
           style: {
-            backgroundColor: "#00d"
+            // backgroundColor: "#00d"
+            activeColor: 'grey'
           }
       },
       {
@@ -51,7 +60,8 @@ function createNotes() {
           title: "some video"
       },
         style: {
-          backgroundColor: "#00d"
+          // backgroundColor: "#00d"
+          activeColor: 'grey'
       }
       },
       {
@@ -62,7 +72,8 @@ function createNotes() {
           title: "some video"
       },
         style: {
-          backgroundColor: "#00d"
+          // backgroundColor: "#00d"
+          activeColor: 'grey'
       }
       },
       {
@@ -74,7 +85,11 @@ function createNotes() {
                 { txt: "Do that",  doneAt: null },
                 { txt: "Do this", doneAt: Date.now() }
             ]
-          }
+          },
+          style: {
+            // backgroundColor: "#00d"
+            activeColor: 'grey'
+        }
       }
  // <NoteAudio>: bonus
  // <NoteMap>: bonus

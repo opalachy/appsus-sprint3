@@ -6,13 +6,19 @@ import noteAdd from '../cmps/note-add.cmp.js';
 import noteList from './note-list.pages.js';
 import colorPicker from '../cmps/color-picker.cmp.js';
 
+
 export default {
     template: `
     <main>
         <note-search @filtered="setFilter"></note-search>
         <h1>Hello keep App</h1>
-        <note-add @onAddNote="addNote"></note-add>  
-        <note-list class="flex wrap" v-on:click="selectNote" :notes="notesToShow"></note-list>
+        <note-add @onAddNote="addNote"></note-add>
+        <section v-show="getPinnednotes(notesToShow).length > 0">
+            <h4>Pinned:</h4>
+            <note-list class="flex wrap" v-on:click="selectNote" :notes="getPinnednotes(notesToShow)"></note-list>
+            <h4>Others:</h4>
+        </section>
+        <note-list class="flex wrap" v-on:click="selectNote" :notes="getOtherNotes(notesToShow)"></note-list>
     </main>   
 `,
     data(){
@@ -26,12 +32,13 @@ export default {
         noteSearch,
         noteList,
         noteAdd,
-        colorPicker
+        colorPicker,
     },
     created() {
         keepServices.getNotes()
             .then(notes => {
                 this.notes = notes;
+                this.filterBy = '';
             })
     },
     methods: {
@@ -42,11 +49,22 @@ export default {
                 keepServices.saveNoteToStorage()
                 keepServices.getNotes()
             },
+            //
             setFilter(filterBy) {
                 this.filterBy = filterBy;
             },
             selectNote(note) {
                 this.currNote = note;   
+            },
+            getPinnednotes(notes) {
+                return notes.filter(note=>{
+                    return note.isPinned
+                })
+            },
+            getOtherNotes(notes) {
+                return notes.filter(note=>{
+                return !note.isPinned
+                })
             }
     },
     computed: {
@@ -76,7 +94,6 @@ export default {
                         }
                         if (noteType === "NoteTodos") {
                             let todos = note.info.todos;
-                            // let searchableText = '';
                             let filteredTodos = todos.filter(todo => todo.txt.toLowerCase().includes(uQuery))
                             return filteredTodos.length > 0;
                         }
