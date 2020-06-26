@@ -1,4 +1,4 @@
-
+{/* <button v-if="set" @click="isRecompose">Recompose</button>  */}
 import { emailServices } from "../../email/service/email.service.js";
 
 export default {
@@ -26,6 +26,7 @@ export default {
             <button @click="wasRead">Mark Read</button>
             <button @click="deleteEmail">Delete</button>
             <button :class="isMarkStars" @click="markStar">Star</button>
+            <button v-if="set">Recompose</button> 
            
         </div>
     `,
@@ -33,7 +34,8 @@ export default {
         return {
             isStars: false,
             isInbox: true,
-            isDelete: true
+            isDelete: true,
+            set: this.email.isDraft
 
 
 

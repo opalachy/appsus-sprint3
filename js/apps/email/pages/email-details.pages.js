@@ -29,7 +29,7 @@ export default {
                         </form>
                 </section>
 
-                <router-link v-if="nextEmailId" :to="'/email/' + nextEmailId">Next Email</router-link>    
+                <router-link v-if="nextEmailId" @click.native="wasRead" :to="'/email/' + nextEmailId">Next Email</router-link>    
                 <router-link to="/email">Back</router-link>
                 <button @click="close">Undo</button>
                 <button @click="deleteEmail">Delete</button>
@@ -62,8 +62,10 @@ export default {
         deleteEmail(){
             emailServices.removeEmail(this.email.id);
             this.$router.back()
-        }
-
+        },
+        wasRead() {
+            emailServices.markRead(this.email.id);
+        },
     },
     watch: {
         '$route.params.emailId'(newEmailId) {
