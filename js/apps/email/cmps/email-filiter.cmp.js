@@ -9,10 +9,10 @@ export default {
                 <option>Not Read</option>
             </select>
             <div class="email-container">
-                <div class="box">Inbox</div>
-                <div class="box">Stars</div>
-                <div class="box">Draft</div>
-                <div class="box">Delete</div>
+                <div class="box" @click="setInbox">Inbox</div>
+                <div class="box" @click="setStars">Stars</div>
+                <div class="box" @click="setDraft">Draft</div>
+                <div class="box" @click="setDelete">Delete</div>
             </div>
         </section>
     `,
@@ -20,7 +20,11 @@ export default {
         return {
             filterBy: {
                 searchBySubject:'',
-                isRead: 'All'
+                isRead: 'All',
+                isInbox: true,
+                isStars: false,
+                isDraft: false,
+                isDelete: false
             }
         }
     },
@@ -28,6 +32,34 @@ export default {
         filter() {
             this.$emit('filtered', this.filterBy);
         },
+        setInbox(){
+            this.filterBy.isInbox = true;
+            this.filterBy.isStars = false;
+            this.filterBy.isDraft = false;
+            this.filterBy.isDelete =false;
+            this.filterBy();
+        },    
+        setStars(){
+            this.filterBy.isInbox = false;
+            this.filterBy.isStars = true;
+            this.filterBy.isDraft = false;
+            this.filterBy.isDelete =false;
+            this.filterBy();
+        },    
+        setDraft(){
+            this.filterBy.isInbox = false;
+            this.filterBy.isStars = false;
+            this.filterBy.isDraft = true;
+            this.filterBy.isDelete =false;
+            this.filterBy();
+        },    
+        setDelete(){
+            this.filterBy.isInbox = false;
+            this.filterBy.isStars = false;
+            this.filterBy.isDraft = false;
+            this.filterBy.isDelete =true;
+            this.filterBy();
+        }    
     }
 }
 

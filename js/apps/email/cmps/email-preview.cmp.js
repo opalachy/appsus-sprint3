@@ -1,13 +1,11 @@
 
 import { emailServices } from "../../email/service/email.service.js";
 
- // <button @click="markStar">Star</button> //need to add function
-
 export default {
     props: ['email'],
     template: `
         <div class="email-preview" flex wrap>
-     
+            Email was sent at: {{email.sentAt}}
         <div>
                     <form class="email-preview flex">
                         <div>
@@ -27,17 +25,26 @@ export default {
             <button @click="markNotRead">Mark Not Read</button>
             <button @click="wasRead">Mark Read</button>
             <button @click="deleteEmail">Delete</button>
+            <button :class="isMarkStars" @click="markStar">Star</button>
            
         </div>
     `,
     data() {
         return {
+            isStars: false,
+            isInbox: true,
+            isDelete: true
+
+
 
         }
     },
     computed: {
         isRead() {
             return (this.email.isRead) ? 'normal' : 'bold';
+        },
+        isMarkStars() {
+            return (this.email.isStars) ? 'Stars' : '';
         }
 
     },
@@ -49,7 +56,13 @@ export default {
             emailServices.markNotRead(this.email.id);
         },
         deleteEmail() {
-            emailServices.RemoveEmail(this.email.id);
+            emailServices.removeEmail(this.email.id);
+        },
+        markStar() {
+            this.isStars = !this.isStars;
+            this.isInbox = !this.isInbox;
+            this.email.isStars = this.isStars;
+            this.email.isInbox = this.isInbox;
         }
     }
 };

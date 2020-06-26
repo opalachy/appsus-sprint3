@@ -18,7 +18,7 @@ export default {
             <input v-if="!set" type="text" v-model="email.cc"/>
             </div>
             <div>
-            <label v-if="!set" value="blabla"for="Bcc">Bcc:</label>
+            <label v-if="!set" for="Bcc">Bcc:</label>
             <input v-if="!set" type="text" v-model="email.bcc"/>
             </div>
             <div>
@@ -42,7 +42,11 @@ export default {
                 subject: '',
                 body: '',
                 isRead: false,
-                sentAt: new Date
+                sentAt: new Date,
+                isInbox: true,
+                isStars: false,
+                isDraft: false,
+                isDelete: false
             },
             set: true
         }
@@ -57,11 +61,11 @@ export default {
             this.set = !this.set;
             this.$emit('clicked', this.set);
         },
-        logEmail(){
+        logEmail() {
             this.set = !this.set;
             this.$emit('clicked', this.set);
             emailServices.sendEmail(this.email);
-            setTimeout(()=> {
+            setTimeout(() => {
                 this.email = {
                     id: Utils.getRandomId(),
                     to: '',
@@ -70,9 +74,13 @@ export default {
                     subject: '',
                     body: '',
                     isRead: false,
-                    sentAt: new Date
+                    sentAt: new Date,
+                    isInbox: true,
+                    isStars: false,
+                    isDraft: false,
+                    isDelete: false
                 }
-            },0.3)
+            }, 0.3)
         }
     }
 }

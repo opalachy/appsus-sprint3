@@ -59,7 +59,11 @@ function _createEmail(subject, body) {
         subject: subject,
         body: body,
         isRead: false,
-        sentAt: new Date
+        sentAt: new Date,
+        isInbox: true,
+        isStars: false,
+        isDraft: false,
+        isDelete: false
     }
 }
 
@@ -87,9 +91,15 @@ function getNextEmail(emailId) {
 
 function removeEmail(emailId) {
     var emailIdx = gEmails.findIndex(function (email) {
+        if (emailId === email.id){
+            console.log(email) //Why when we open the console before deleting the email, the apps is not "deleting it: changing is state from false to true"
+            email.isDelete = true;
+            email.isInbox = false;
+            console.log(email)
+        }
         return emailId === email.id;
     });
-    gEmails.splice(emailIdx, 1);
-    _saveEmailsToStorage();
+    // gEmails.splice(emailIdx, 1);
+    // _saveEmailsToStorage();
 }
 
