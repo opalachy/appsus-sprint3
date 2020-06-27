@@ -26,7 +26,7 @@ new Vue({
          <router-view />
       </main>
       <footer>
-         coffeerights &copy 2020
+         <h4 class="footer">coffeerights &copy 2020</h4>
       </footer>
     </div>
     `,
