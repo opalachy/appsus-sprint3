@@ -4,9 +4,17 @@
 }
 .search-bar input{ 
     margin: unset;
-    padding: 15px;
 }
 .search-bar h1{
     margin: 0 auto;
     font-size:  2rem;
+}
+.search-bar *{
+    padding: 1rem;
+    font-size: 1.5rem;
+    border-radius: 20px;
+    margin-top: 20px;
+    border: none;
+    outline:none;
+    /* background-color: #d4d4d4a1 */
 }

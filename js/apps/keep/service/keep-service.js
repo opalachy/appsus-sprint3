@@ -24,8 +24,7 @@ function createNotes() {
               txt: "Fullstack Me Baby!"
           },
           style: {
-            // backgroundColor: "#00d"
-            activeColor: 'grey'
+            activeColor: 'lightgray'
           }
       },
       {
@@ -36,8 +35,7 @@ function createNotes() {
           txt: "Reaminder go to have coffe!"
         },
           style: {
-            // backgroundColor: "#00d"
-            activeColor: 'grey'
+            activeColor: 'lightgray'
         }
       },
       {
@@ -48,8 +46,7 @@ function createNotes() {
               title: "Me playing Mi"
           },
           style: {
-            // backgroundColor: "#00d"
-            activeColor: 'grey'
+            activeColor: 'lightgray'
           }
       },
       {
@@ -60,8 +57,7 @@ function createNotes() {
           title: "some video"
       },
         style: {
-          // backgroundColor: "#00d"
-          activeColor: 'grey'
+          activeColor: 'lightgray'
       }
       },
       {
@@ -72,8 +68,7 @@ function createNotes() {
           title: "some video"
       },
         style: {
-          // backgroundColor: "#00d"
-          activeColor: 'grey'
+          activeColor: 'lightgray'
       }
       },
       {
@@ -87,12 +82,9 @@ function createNotes() {
             ]
           },
           style: {
-            // backgroundColor: "#00d"
-            activeColor: 'grey'
+            activeColor: 'lightgray'
         }
       }
- // <NoteAudio>: bonus
- // <NoteMap>: bonus
    ];
   }
    gNote = notes;

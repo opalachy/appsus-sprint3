@@ -2,10 +2,8 @@
 * {
     box-sizing: border-box;
 }
-
+/* 
 body {
-    /* margin: 0 10px; */
-    /* background-color: aqua; */
 }
 
 .book-list {
@@ -14,7 +12,6 @@ body {
 
 li {
     margin: 10px;
-    /* background: rgb(148, 155, 160); */
     width: 250px;
     text-align: center;
     line-height: 1.5rem;
@@ -22,7 +19,6 @@ li {
 }
 
 li:hover {
-    /* background: rgba(148, 155, 160, 0.76); */
 }
 
 .clean-list {
@@ -68,7 +64,6 @@ button {
 }
 .book-details{
     margin: 10px;
-    /* background: rgb(148, 155, 160); */
     width: 500px;
     text-align: center;
     line-height: 1.5rem;
@@ -80,4 +75,4 @@ img{
 }
 input{
     margin-top: 20px;
-}
+} */

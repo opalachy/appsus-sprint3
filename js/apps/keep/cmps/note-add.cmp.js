@@ -6,15 +6,19 @@
 //to pages
 export default{
     template:`
-    <section class="add-note">
+    <section class="add-note flex column">
         <section >
-            <input type="text" v-model="inputValue" :placeholder="getPlaceHolderText(selectedNoteType)"/>
-            <button :class="{'selected-btn': selectedNoteType === 'NoteText'}" v-on:click="selectNoteType('NoteText')">text</button>
-            <button :class="{'selected-btn': selectedNoteType === 'NoteVideo'}" v-on:click="selectNoteType('NoteVideo')">video</button>
-            <button :class="{'selected-btn': selectedNoteType === 'NoteImg'}" v-on:click="selectNoteType('NoteImg')">image</button>
-            <button :class="{'selected-btn': selectedNoteType === 'NoteTodos'}" v-on:click="selectNoteType('NoteTodos')">todo</button>
+            <input type="text" @keyup="keyUp"  @blur="addNote(selectedNoteType)" v-model="inputValue" :placeholder="getPlaceHolderText(selectedNoteType)"/>
+                <div>
+                <i class="fa fa-font" aria-hidden="true" :class="{'selected-btn': selectedNoteType === 'NoteText'}" v-on:click="selectNoteType('NoteText')"></i>
+                <i class="fa fa-youtube-square" aria-hidden="true" :class="{'selected-btn': selectedNoteType === 'NoteVideo'}" v-on:click="selectNoteType('NoteVideo')"></i>
+                <i class="fa fa-picture-o" aria-hidden="true" :class="{'selected-btn': selectedNoteType === 'NoteImg'}" v-on:click="selectNoteType('NoteImg')"></i>
+                <i class="fa fa-list" aria-hidden="true" :class="{'selected-btn': selectedNoteType === 'NoteTodos'}" v-on:click="selectNoteType('NoteTodos')"></i>
+                </div>
         </section>
-        <button v-on:click="addNote(selectedNoteType)">add</button>
+        <!-- <button v-on:click="addNote(selectedNoteType)"> -->
+            <!-- <i class="fa fa-plus add-icon" aria-hidden="true" v-on:click="addNote(selectedNoteType)"></i> -->
+        <!-- </button> -->
     </section>
     `,
     data(){
@@ -37,13 +41,18 @@ export default{
         getPlaceHolderText(noteType){    
            return this.PlaceHolderText[noteType]
         },
+        keyUp(ev){
+            if(ev.keyCode === 13){
+                this.addNote(this.selectedNoteType)
+            }
+        },
         //from service
         addNote(noteType){
             var newNote = {};
             newNote.type = noteType;
             newNote.info = {};
             newNote.style = {
-                activeColor:'grey',
+                activeColor:'lightgray',
             };
 
             if(this.inputValue === '')return

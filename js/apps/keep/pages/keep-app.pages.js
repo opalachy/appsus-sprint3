@@ -9,14 +9,13 @@ import colorPicker from '../cmps/color-picker.cmp.js';
 
 export default {
     template: `
-    <main>
+    <main class="main-keep-app">
         <note-search @filtered="setFilter"></note-search>
-        <h1>Hello keep App</h1>
         <note-add @onAddNote="addNote"></note-add>
         <section v-show="getPinnednotes(notesToShow).length > 0">
-            <h4>Pinned:</h4>
+            <h4 class="keep-category">Pinned Notes:</h4>
             <note-list class="flex wrap" v-on:click="selectNote" :notes="getPinnednotes(notesToShow)"></note-list>
-            <h4>Others:</h4>
+            <h4 class="keep-category">Other Notes:</h4>
         </section>
         <note-list class="flex wrap" v-on:click="selectNote" :notes="getOtherNotes(notesToShow)"></note-list>
     </main>   
@@ -80,21 +79,21 @@ export default {
                 if (filterBy.searchByTitle) {
                     filteredNotes = filteredNotes.filter(note => {
                         let noteType = note.type;
-                        let uQuery = filterBy.searchByTitle.toLowerCase();
+                        let filter = filterBy.searchByTitle.toLowerCase();
                         if (noteType === "NoteText") {
-                            return note.info.txt.toLowerCase().includes(uQuery);
+                            return note.info.txt.toLowerCase().includes(filter);
                         }
                         if (noteType === "NoteImg") {
                             if (note.info.title === undefined) return false;
-                            return note.info.title.toLowerCase().includes(uQuery);
+                            return note.info.title.toLowerCase().includes(filter);
                         }
                         if (noteType === "NoteVideo") {
                             if (note.info.title === undefined) return false;
-                            return note.info.title.toLowerCase().includes(uQuery);
+                            return note.info.title.toLowerCase().includes(filter);
                         }
                         if (noteType === "NoteTodos") {
                             let todos = note.info.todos;
-                            let filteredTodos = todos.filter(todo => todo.txt.toLowerCase().includes(uQuery))
+                            let filteredTodos = todos.filter(todo => todo.txt.toLowerCase().includes(filter))
                             return filteredTodos.length > 0;
                         }
                     });
@@ -102,7 +101,10 @@ export default {
                 return filteredNotes;
              }
            
-         }   
+         }  ,
+        //  destroyed(){
+        //      alert
+        //  } 
          
 }
 

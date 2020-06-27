@@ -6,7 +6,7 @@
    display: grid;
    background-color: unset;
    font-size: 1.6rem;
-    line-height: 1.5;
+   line-height: 1.5;
 }
 .note-list img{
     width: 250px;
@@ -19,6 +19,24 @@
     padding: 10px;
     
 }
-.gray {
+
+.note-list div i{
+    font-size: 20px;
+    font-size: 2rem;
+    padding: 10px;
+    border: none;
+    outline:none;
+    cursor: pointer;
     color: gray;
+}
+
+.note-list div i:hover{
+    color: black;
+}
+
+.note-list li p{
+    cursor: pointer;
+}
+.note-view{
+    box-shadow: 4px 4px 4px 6px #ccc;
 }

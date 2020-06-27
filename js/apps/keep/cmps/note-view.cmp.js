@@ -9,14 +9,13 @@ import editNote from '../cmps/edit-note.cmp.js';
 export default{
     props:['note','cmpType'],
     template:`
-    <div v-bind:style="{'background-color': note.style.activeColor}">    
+    <div class="note-view" v-bind:style="{'background-color': note.style.activeColor}">    
         <component :is="cmpType" :note="note"></component>
-        <button @click="deleteNote"><i class="fa fa-trash" aria-hidden="true"></i></button>
-        <button id="show-modal" @click="showEditor = true"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+            <i class="fa fa-trash" aria-hidden="true" @click="deleteNote"></i>
+            <i class="fa fa-pencil-square-o" aria-hidden="true" id="show-modal" @click="showEditor = true"></i>
         <editNote v-if="showEditor" :note="note" @close="showEditor = false"></editNote>
-        <button @click='openPalette'><i class= "fa fa-paint-brush"></i></button>
-        <button @click='addToPin'><i :class="getPinBtnText()"></i></button>
-        <!-- <button>copy</button> -->
+            <i class= "fa fa-paint-brush" @click='openPalette'></i>
+            <i :class="getPinBtnText()" @click='addToPin'></i>
         <color-picker v-if="isPaletteShown" @pickedColor="colorPicked"></color-picker>
     </div>
     `,

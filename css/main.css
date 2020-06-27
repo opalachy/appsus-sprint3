@@ -10,7 +10,8 @@
 /* @import './apps/email/cmps/email-list.cmp.css'; */
 @import './apps/keep/edit-note.css';
 @import './apps/email/cmps/email-filter.cmp.css';
-
+@import './apps/keep/main-keep-app.css';
+@import './apps/keep/note-view.css';
 * {
     box-sizing: border-box;
 }
@@ -22,11 +23,11 @@
 background-color: chocolate;
 }
 
-
+/* 
 li {
     margin: 10px;
     background: rgb(148, 155, 160);
-    width: 250px; */
+    width: 250px; */ 
     /* height: 400px; */
     /* text-align: center;
     line-height: 1.5rem;

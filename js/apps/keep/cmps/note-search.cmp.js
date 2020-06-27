@@ -2,7 +2,6 @@
 export default{
     template:`
     <section class="search-bar">
-         <h1>Search</h1>
          <input placeholder="search" type="text" v-model="filterBy.searchByTitle" @input="filter"/>
          <select v-model="filterBy.searchByType"  @input="filter">
              <option value="img">Images</option>
