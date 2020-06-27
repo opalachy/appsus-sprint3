@@ -1,20 +1,24 @@
 
 export default {
     template: `
-        <section class="email-filter flex">
+    <section class="email-filter flex">
             <div>
+                    <div>
                     <input class="filter-input" type="text" placeholder="Search By Subject" v-model="filterBy.searchBySubject" @input="filter"/>
+                    </div>
+                    <div>
                     <select class="filter-select" v-model="filterBy.isRead" @input="filter">
                         <option >All</option>
                         <option>Read</option>
                         <option>Not Read</option>
                     </select>
+                    </div>
             </div>    
             <div class="email-container">
-                <div class="box" @click="setInbox"><i class="fa fa-inbox" aria-hidden="true"></i> Inbox</div>
-                <div class="box" @click="setStars"><i class="fa fa-star-o" aria-hidden="true"></i> Stars</div>
-                <div class="box" @click="setDraft"><i class="fa fa-files-o" aria-hidden="true"></i> Draft</div>
-                <div class="box" @click="setDelete"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</div>
+                <div class="box" :class="isInbox" @click="setInbox"><i class="fa fa-inbox" aria-hidden="true"></i> Inbox</div>
+                <div class="box" :class="isStars" @click="setStars"><i class="fa fa-star-o" aria-hidden="true"></i> Stars</div>
+                <div class="box" :class="isDraft" @click="setDraft"><i class="fa fa-files-o" aria-hidden="true"></i> Draft</div>
+                <div class="box" :class="isDelete" @click="setDelete"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</div>
             </div>
         </section>
     `,
@@ -28,6 +32,20 @@ export default {
                 isDraft: false,
                 isDelete: false
             }
+        }
+    },
+    computed:{
+        isInbox(){
+            return (this.filterBy.isInbox) ? 'Inbox' : '';
+        },
+        isDraft(){
+            return (this.filterBy.isDraft) ? 'Draft' : '';
+        },
+        isStars(){
+            return (this.filterBy.isStars) ? 'Starss' : '';
+        },
+        isDelete(){
+            return (this.filterBy.isDelete) ? 'Delete' : '';
         }
     },
     methods: {

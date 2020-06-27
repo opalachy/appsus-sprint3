@@ -1,5 +1,6 @@
 
 import bookApp from './apps/book/pages/book-app.cmp.js';
+import bookDetails from './apps/book/pages/book-details.cmp.js';
 import emailApp from './apps/email/pages/email-app.pages.js';
 import keepApp from './apps/keep/pages/keep-app.pages.js';
 import emailDetails from './apps/email/pages/email-details.pages.js';
@@ -8,6 +9,10 @@ import about from './about.js';
 
 
 const myRoutes = [
+    {
+        path: '/book/:bookId',
+        component: bookDetails
+    },
     {
         path: '/about',
         component: about

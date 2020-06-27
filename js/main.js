@@ -25,7 +25,7 @@ new Vue({
       </main>
 
       <footer>
-         coffeerights 2020
+         coffeerights &copy 2020
       </footer>
     </div>
     `,
