@@ -1,0 +1,19 @@
+@media screen and (max-width: 380px) {
+
+    .search-bar input{
+        margin-top: 20px;
+    }
+    .add-note{
+        max-width: 350px;
+    }
+    .add-note ul{
+        padding-inline-start: unset;
+        margin: 0 auto;
+    }
+    .note-list div {
+        margin: 0 auto;
+    }
+    ul{
+        padding-inline-start: unset;
+    }
+  }

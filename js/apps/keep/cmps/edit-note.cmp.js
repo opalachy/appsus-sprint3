@@ -7,16 +7,12 @@ export default{
     props:['note'],
     template: `
         <transition name="modal">
-        <div class="modal-mask">
+        <div class="modal-mask" >
           <div class="modal-wrapper">
-            <div class="modal-container">
+            <div class="modal-container" :style="{'background-color': note.style.activeColor}">
             <component :is-edit="true" :is="note.type" :note="note"></component>
               <div class="modal-footer">
-            
-                <!-- <input type="text" value="note.title"/> -->
-                  <button class="modal-default-button" @click="saveEdit()">
-                    Edit
-                  </button>
+                  <i  class="fa fa-check modal-default-button" @click="saveEdit()" aria-hidden="true"></i>
                 </slot>
               </div>
             </div>
