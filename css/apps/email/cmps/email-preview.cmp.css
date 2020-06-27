@@ -16,6 +16,10 @@
     background-color: white;
 }
 
+.email-preview.email-preview-div{
+    border-color: #ffbf00;
+}
+
 .preview-last{
     width: 500px;
     margin: 0;
@@ -55,6 +59,7 @@ select{
 .email-preview-form .preview-div  {
     display: flex;
     padding: 0;
+
 } 
 
 .preview-label {

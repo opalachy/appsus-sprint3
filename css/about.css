@@ -1,16 +1,14 @@
-/* *{
-    text-align: center;
-}
-.about{
+
+ .about{
     max-width: 900px;
     margin: 0 auto;
     letter-spacing: 0.5px;
     margin-top: 30px;
     padding: 0 20px;
     
-}
+} 
 .about h1{
     font-size: 1.5rem;
     text-align: left;
 }
-} */
+
