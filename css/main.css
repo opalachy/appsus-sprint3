@@ -11,6 +11,7 @@
 /* @import './apps/email/cmps/email-list.cmp.css'; */
 @import './apps/keep/edit-note.css';
 @import './apps/email/cmps/email-filter.cmp.css';
+@import './apps/email/email-mobile.css';
 
 * {
     box-sizing: border-box;
