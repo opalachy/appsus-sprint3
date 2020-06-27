@@ -4,6 +4,7 @@
 .main-navbar{
     background-color: #ffbf00;
     width: 100%;
+    text-align: center;
 }
 .main-navbar a{
     text-decoration: none;
