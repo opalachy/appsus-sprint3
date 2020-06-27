@@ -5,7 +5,7 @@ export const Utils = {
     loadFromStorage,
     getRandomInt,
     getRandomId,
-    loremIpsum
+    loremIpsum,
 }
 
 function storeToStorage(key, value) {
@@ -37,3 +37,6 @@ function loremIpsum(num1, num2) {
     while (--x) text.push(words[Math.floor(Math.random() * words.length)]);
     return text.join(" ");
 }
+
+
+

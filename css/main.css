@@ -15,6 +15,7 @@
 @import './apps/email/email-media.css';
 @import './apps/keep/keep-media.css';
 @import './about.css';
+@import './nav-bar.css';
 
 * {
     box-sizing: border-box;
@@ -23,10 +24,6 @@
     margin: 0  ;
     background-color: #a9a9a94d
 } 
-
-.main-navbar{
-background-color: chocolate;
-}
 
 button{
     cursor: pointer;

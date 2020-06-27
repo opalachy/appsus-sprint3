@@ -1,0 +1,70 @@
+
+.main-navbar{
+    background-color: #ffbf00;
+    width: 100%;
+}
+.main-navbar a{
+    text-decoration: none;
+    color: black;
+    line-height: 5.4;
+    margin: 0;
+    padding: 0;
+    width: inherit;
+}
+.routes{    
+    height: 65px;
+    align-items: center;
+    justify-content: space-between;
+    width: 400px;
+}
+.routes a:hover{
+    border-bottom: 3px solid black;
+}
+.routes a:focus{
+    border-bottom: 3px solid black;
+}
+
+.main-navbar h1{
+    padding-left: 45px;
+    font-size: 2rem;
+}
+
+.btn-menu{
+    display: none;
+    font-size: 2rem;
+    background-color: inherit;
+    border: none;
+}
+
+@media (max-width: 860px){
+    .routes{
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-left: 1px solid #c4c4c4;
+        width: 250px;
+        justify-content: end;
+        transform: translateX(100%);
+        transition: transform .8s, box-shadow .3s;
+    }
+    
+    .routes.menu-open {
+        transform: translateX(0%);
+        box-shadow: -6px 0px 14px rgba(0, 0, 0, 0.2);
+    }
+    .screen.menu-open{
+        cursor: pointer;
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.404);
+    }
+    .btn-menu{
+        display: block;
+        margin-right: 30px;
+    }
+
+}
