@@ -52,7 +52,7 @@
 }
 
 .button-compose {
-    margin: 1rem;
+    margin: 2rem 2rem 0 2rem;
 }
 .button-compose:hover {
     opacity: 0.8;

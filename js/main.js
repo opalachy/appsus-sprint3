@@ -1,6 +1,3 @@
-{/* <router-link to="/">Home</router-link> | */}
-{/* <router-link to="/about">About</router-link> |  */}
-{/* <book-app></book-app> */}
 
 import {myRouter} from './routes.js'
 
@@ -16,7 +13,7 @@ new Vue({
             <h1>Appsus</h1>
             </div>
             <div>
-            <router-link to="/book">Book Profile</router-link> |
+            <router-link to="/about">About Us</router-link> |
             <router-link to="/books">Books App</router-link> | 
             <router-link to="/email">Email App</router-link> | 
             <router-link to="/keep">Keep App</router-link> 

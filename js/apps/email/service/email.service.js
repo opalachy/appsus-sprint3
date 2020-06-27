@@ -25,7 +25,6 @@ function createEmails() {
         }
         gEmails = newEmails;
     } else gEmails = emails;
-    console.log(gEmails)
     _saveEmailsToStorage();
     return gEmails
 }
