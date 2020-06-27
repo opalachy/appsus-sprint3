@@ -14,6 +14,7 @@
 @import './apps/keep/main-keep-app.css';
 @import './apps/keep/note-view.css';
 @import './apps/email/email-media.css';
+@import './about.css';
 
 * {
     box-sizing: border-box;

@@ -7,11 +7,6 @@ export default {
             <email-preview v-for="email in emails" :email="email" :key="email.id"/>
         </ul>
     `,
-    // methods: {
-    //     selectEmail(email) {
-    //         this.$emit('selected', email);
-    //     }
-    // },
     components:{
         emailPreview
     }
