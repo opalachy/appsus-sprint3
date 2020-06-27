@@ -9,22 +9,22 @@ export default {
                             <label class="first details-label" for="Email">Email</label>
                             <div class="email-details-div">
                             <label class="details-label" for="to">To:</label>
-                            <input class="details-input" type="email" v-model="email.to"/>
+                            <input disabled class="details-input" type="email" v-model="email.to"/>
                             </div>
                             <div class="email-details-div">
                             <label class="details-label" for="Cc">Cc:</label>
-                            <input class="details-input" type="text" v-model="email.cc"/>
+                            <input disabled class="details-input" type="text" v-model="email.cc"/>
                             </div>
                             <div class="email-details-div">
                             <label class="details-label" for="Bcc">Bcc:</label>
-                            <input class="details-input" type="text" v-model="email.bcc"/>
+                            <input disabled class="details-input" type="text" v-model="email.bcc"/>
                             </div>
                             <div class="email-details-div">
                             <label class="details-label" for="Subject">Subject:</label>
-                            <input class="details-input" type="text" v-model="email.subject"/>
+                            <input disabled class="details-input" type="text" v-model="email.subject"/>
                             </div>
                             <div class="email-details-div">
-                            <textarea class="last" type="text" v-model="email.body"></textarea>
+                            <textarea disabled class="last" type="text" v-model="email.body"></textarea>
                             </div>
                         </form>
                 </section>

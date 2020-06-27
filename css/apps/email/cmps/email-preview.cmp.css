@@ -26,7 +26,7 @@
     border: none;
     background: none;
     font-size: 1.2rem;
-    margin-left: 15px;
+    margin-left: 1rem;
 }
 
 select{
@@ -86,4 +86,7 @@ preview-div{
     margin: 5px;
     padding: 5px;
     border: 1px solid black
+}
+.bottom-button{
+    text-align: center;
 }

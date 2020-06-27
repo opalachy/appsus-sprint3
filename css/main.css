@@ -14,6 +14,7 @@
 @import './apps/keep/main-keep-app.css';
 @import './apps/email/email-media.css';
 @import './apps/keep/keep-media.css';
+@import './apps/email/pages/email-apps.pages.css';
 @import './about.css';
 @import './nav-bar.css';
 
@@ -22,7 +23,7 @@
 }
  body {
     margin: 0  ;
-    background-color: #a9a9a94d
+    background-color: #a9a9a94d;
 } 
 
 button{

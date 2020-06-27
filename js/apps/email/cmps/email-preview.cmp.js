@@ -5,29 +5,30 @@ export default {
     props: ['email'],
     template: `
         <div class="email-preview email-preview-div" >
-            Email was sent at: {{email.sentAt}}
+            <p class="text-media">Email was sent at: {{email.sentAt}}</p>
         <div class="email-preview-div">
                     <form class="email-preview-form flex">
                         <div class="preview-div">
                         <label class="preview-label" :class="isRead" for="to">To:</label>
-                        <input class="preview-input" :class="isRead" type="email" v-model="email.to"/>
+                        <input disabled class="preview-input" :class="isRead" type="email" v-model="email.to"/>
                         </div>
                         <div class="preview-div">
                         <label class="preview-label" :class="isRead" for="Subject">Subject:</label>
-                        <input class="preview-input" :class="isRead" type="text" v-model="email.subject"/> 
+                        <input disabled class="preview-input" :class="isRead" type="text" v-model="email.subject"/> 
                         </div>
                         <div class="preview-div">
-                        <textarea :class="isRead" class="preview-last"  type="text">{{email.body.substring(0, 100) + '...'}}</textarea>
+                        <textarea disabled :class="isRead" class="preview-last"  type="text">{{email.body.substring(0, 100) + '...'}}</textarea>
                         </div>
                     </form>
         </div>
+        <div class="bottom-button">
             <router-link @click.native="wasRead" :to="'/email/' + email.id + '/' + email.subject"><i class="fa fa-book" aria-hidden="true"></i></router-link> | 
             <button class="button-email-preview" @click="markNotRead"><i class="fa fa-envelope" aria-hidden="true"></i></button>
             <button class="button-email-preview" @click="wasRead"><i class="fa fa-envelope-open-o" aria-hidden="true"></i></button>
             <button class="button-email-preview" @click="deleteEmail"><i class="fa fa-trash" aria-hidden="true"></i></button>
             <button class="button-email-preview" :class="isMarkStars" @click="markStar"><i class="fa fa-star" aria-hidden="true"></i></button>
             <button class="button-email-preview" v-if="set"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button> 
-           
+           </div>
         </div>
     `,
     data() {

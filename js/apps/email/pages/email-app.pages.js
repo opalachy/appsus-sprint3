@@ -8,8 +8,10 @@ export default {
     template: `
     <main class="email-app">
         <email-compose @clicked="setCompose" > Compose</email-compose>
+        <div class="container-filter-list">
         <email-filter v-if="isCompose" @filtered="setFilter" ></email-filter>
         <email-list v-if="isCompose" :emails="emailsToShow" ></email-list >
+        </div>
     </main>   
 `,
     data() {

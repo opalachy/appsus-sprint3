@@ -1,31 +1,40 @@
 .email-container{
     display: flex;
-    flex-wrap: wrap;
     height: 5vh;
     justify-content: center;
+
+
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+    position: relative;
+    bottom: -3.875rem;
 }
 .box{
     cursor: pointer;
     border: 1px solid black;
-    background-color: rgb(240, 23, 23);
-    text-align: center;
-    padding: 10px;
-    height: 3rem;
+    background-color: white;
+    text-align: left;
+    padding: 5px;
     width: 10rem;
     border-radius: 2rem;
     font-weight: bold ;
     margin-right: 0.2rem;
+    margin-top: 0.3rem;
+
 }
 .box:hover{
-    background-color: rgb(240, 23, 23);
+    background-color: #ffbf00;
+    color:  black;
     opacity: 0.8;
     transition: opacity 0.6s;
 }
+
 
 .filter-input{
     max-width: 20rem;
     height: 2rem;
     border-radius: 0.5rem;
+    margin-bottom: 0.2rem;
 }
 .filter-select{
     max-width: 20rem;
@@ -37,7 +46,20 @@
 .email-filter{
     display: flex;
     flex-direction: column;
-    margin: 2rem;
+    margin-left: 0.3rem;
 }
 
-
+.Inbox{
+    color: #ffbf00
+    ;
+}
+.Starss{
+    color: #ffbf00;
+}
+.Draft{
+    color:#ffbf00;
+}
+.Delete{
+    color: #ffbf00
+    ;
+}
