@@ -17,7 +17,14 @@ export default {
             isCompose: true,
             emails: [],
             currEmail: null,
-            filterBy: null
+            filterBy: {
+                searchBySubject:'',
+                isRead: 'All',
+                isInbox: true,
+                isStars: false,
+                isDraft: false,
+                isDelete: false
+            }
         }
     },
     created() {
@@ -25,7 +32,6 @@ export default {
             .then(emails => {
                 this.emails = emails;
             })
-
     },
     methods: {
         setFilter(filterBy) {

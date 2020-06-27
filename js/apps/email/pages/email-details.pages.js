@@ -5,34 +5,34 @@ export default {
     template: `
         <section class="email-details" v-if="email">
                 <section>
-                        <form class="email-compose flex">
-                            <label class="first" for="Email">Email</label>
-                            <div>
-                            <label for="to">To:</label>
-                            <input type="email" v-model="email.to"/>
+                        <form class="email-details flex">
+                            <label class="first details-label" for="Email">Email</label>
+                            <div class="email-details-div">
+                            <label class="details-label" for="to">To:</label>
+                            <input class="details-input" type="email" v-model="email.to"/>
                             </div>
-                            <div>
-                            <label for="Cc">Cc:</label>
-                            <input type="text" v-model="email.cc"/>
+                            <div class="email-details-div">
+                            <label class="details-label" for="Cc">Cc:</label>
+                            <input class="details-input" type="text" v-model="email.cc"/>
                             </div>
-                            <div>
-                            <label for="Bcc">Bcc:</label>
-                            <input type="text" v-model="email.bcc"/>
+                            <div class="email-details-div">
+                            <label class="details-label" for="Bcc">Bcc:</label>
+                            <input class="details-input" type="text" v-model="email.bcc"/>
                             </div>
-                            <div>
-                            <label for="Subject">Subject:</label>
-                            <input type="text" v-model="email.subject"/>
+                            <div class="email-details-div">
+                            <label class="details-label" for="Subject">Subject:</label>
+                            <input class="details-input" type="text" v-model="email.subject"/>
                             </div>
-                            <div>
+                            <div class="email-details-div">
                             <textarea class="last" type="text" v-model="email.body"></textarea>
                             </div>
                         </form>
                 </section>
 
-                <router-link v-if="nextEmailId" @click.native="wasRead" :to="'/email/' + nextEmailId">Next Email</router-link>    
-                <router-link to="/email">Back</router-link>
-                <button @click="close">Undo</button>
-                <button @click="deleteEmail"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                <router-link class="button-details"  v-if="nextEmailId" @click.native="wasRead" :to="'/email/' + nextEmailId"><i class="fa fa-reply" aria-hidden="true"></i></router-link>    
+                <router-link class="button-details"  to="/email"><i class="fa fa-sign-out" aria-hidden="true"></i></router-link>
+                <button class="button-details"  @click="close"><i class="fa fa-share" aria-hidden="true"></i></button>
+                <button class="button-details" @click="deleteEmail"><i class="fa fa-trash" aria-hidden="true"></i></button>
         </section>
     `,
     data() {
