@@ -8,7 +8,7 @@ export default {
         <h2 class="helper-h2">{{book.title}} </h2>
         <h2 class="helper-h2" :class="classColor"> {{getCurSym}} </h2>
         <img class="img-helper" :src="book.thumbnail" width=150px >
-        <router-link :to="'/book/' + book.id">Details</router-link> | 
+        <router-link :to="'/book/' + book.id">Details</router-link>  
         </li>
     `,
     data() {

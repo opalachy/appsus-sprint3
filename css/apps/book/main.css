@@ -1,10 +1,11 @@
-.book-list {
-    background-color: aquamarine;
-}
 
 .clean-list {
     list-style-type: none;
     transition-duration: 0.3;
+}
+.search-bar{
+    text-align: center;
+
 }
 
 .flex {
@@ -42,6 +43,7 @@
     text-align: center;
     line-height: 1.5rem;
     cursor: pointer;
+    border-radius: 20px;
 }
 
 /*//////////////////////////////////*/
@@ -49,8 +51,13 @@
 .book-preview {
     margin: 10px;
     background: rgb(148, 155, 160);
+    border: 2px solid gray;
     width: 250px;
-    /* height: 400px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    border-radius: 20px;
     text-align: center;
     line-height: 1.5rem;
     cursor: pointer;
