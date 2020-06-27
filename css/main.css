@@ -13,12 +13,9 @@
 @import './apps/email/cmps/email-filter.cmp.css';
 @import './apps/keep/main-keep-app.css';
 @import './apps/email/email-media.css';
-<<<<<<< HEAD
 @import './apps/keep/keep-media.css';
-=======
 @import './about.css';
 
->>>>>>> b1a8c2bfbd0785ea155552a4b48453e2baa44298
 * {
     box-sizing: border-box;
 }
