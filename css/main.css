@@ -13,13 +13,14 @@
 @import './apps/email/cmps/email-filter.cmp.css';
 @import './apps/keep/main-keep-app.css';
 @import './apps/keep/note-view.css';
-@import './apps/email/email-mobile.css';
+@import './apps/email/email-media.css';
 
 * {
     box-sizing: border-box;
 }
  body {
     margin: 0  ;
+    background-color: #a9a9a94d
 } 
 
 .main-navbar{

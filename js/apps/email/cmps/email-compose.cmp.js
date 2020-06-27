@@ -8,7 +8,8 @@ export default {
         <button class="button-compose control" v-if="!set" @click="isSaveToDraft"><i class="fa fa-floppy-o" aria-hidden="true"></i> Draft</button> 
         <button class="button-compose control" v-if="!set" @click="isCompose"><i class="fa fa-sign-out" aria-hidden="true"></i> without saving</button> 
         <form v-if="!set" class="email-compose flex">
-            <label class="first compose-label" v-if="!set" for="to">New Email</label>
+        <div>
+            <div class="first compose-label" v-if="!set" for="to">New Email</div>
             <div class="email-compose-div">
             <label class="compose-label" v-if="!set" for="to">To:</label>
             <input class="compose-input" v-if="!set" type="email" pattern=".+@globex.com" size="30" required v-model="email.to"/>
@@ -28,8 +29,11 @@ export default {
             <div class="email-compose-div">
             <textarea class="last compose-textarea" v-if="!set" type="text" v-model="email.body"></textarea>
             </div>
+            <div class="email-compose-div">
             <button :disabled="!isValid" v-if="!set" @click.prevent="logEmail"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
-        </form>
+            </div>
+            </div>
+            </form>
     </section>
     `,
     data() {

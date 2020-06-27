@@ -1,7 +1,9 @@
 .first.details-label {
     border: 1px solid black;
-    background-color: black;
+    background-color: rgb(240, 23, 23);
     color: white;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
 
 .details-label {
@@ -41,10 +43,14 @@
     padding: 0.1rem;
 }
 
-.last .details-textarea {
+.last {
     flex-grow: 4;
     min-height: 10px;
     margin: 0;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    resize: none;
+
 }
 
 .button-details {
@@ -53,4 +59,9 @@
     background: none;
     font-size: 1.2rem;
     margin-left: 15px;
+}
+
+.email-details{
+    border-radius: 15px;
+    background-color: white;
 }

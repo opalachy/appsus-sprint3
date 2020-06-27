@@ -3,7 +3,7 @@ import { emailServices } from "../../email/service/email.service.js";
 
 export default {
     template: `
-        <section class="email-details" v-if="email">
+        <section class="email-details container" v-if="email">
                 <section>
                         <form class="email-details flex">
                             <label class="first details-label" for="Email">Email</label>
