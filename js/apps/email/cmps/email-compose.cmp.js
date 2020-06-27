@@ -3,32 +3,32 @@ import { emailServices } from "../../email/service/email.service.js";
 
 export default {
     template: `
-    <section>
-        <button v-if="set" @click="isCompose">Compose</button> 
-        <button v-if="!set" @click="isSaveToDraft">Safe to Draft</button> 
-        <button v-if="!set" @click="isCompose">Back without saving</button> 
+    <section class="email-compose-section">
+        <button class="button-compose control" v-if="set" @click="isCompose"><i class="fa fa-envelope-o" aria-hidden="true"></i> Compose</button> 
+        <button class="button-compose control" v-if="!set" @click="isSaveToDraft"><i class="fa fa-floppy-o" aria-hidden="true"></i> Draft</button> 
+        <button class="button-compose control" v-if="!set" @click="isCompose"><i class="fa fa-sign-out" aria-hidden="true"></i> without saving</button> 
         <form v-if="!set" class="email-compose flex">
-            <label class="first" v-if="!set" for="to">New Email</label>
-            <div>
-            <label v-if="!set" for="to">To:</label>
-            <input v-if="!set" type="email" pattern=".+@globex.com" size="30" required v-model="email.to"/>
+            <label class="first compose-label" v-if="!set" for="to">New Email</label>
+            <div class="email-compose-div">
+            <label class="compose-label" v-if="!set" for="to">To:</label>
+            <input class="compose-input" v-if="!set" type="email" pattern=".+@globex.com" size="30" required v-model="email.to"/>
             </div>
-            <div>
-            <label v-if="!set" for="Cc">Cc:</label>
-            <input v-if="!set" type="text" v-model="email.cc"/>
+            <div class="email-compose-div">
+            <label class="compose-label" v-if="!set" for="Cc">Cc:</label>
+            <input class="compose-input" v-if="!set" type="text" v-model="email.cc"/>
             </div>
-            <div>
-            <label v-if="!set" for="Bcc">Bcc:</label>
-            <input v-if="!set" type="text" v-model="email.bcc"/>
+            <div class="email-compose-div">
+            <label class="compose-label" v-if="!set" for="Bcc">Bcc:</label>
+            <input class="compose-input" v-if="!set" type="text" v-model="email.bcc"/>
             </div>
-            <div>
-            <label v-if="!set" for="Subject">Subject:</label>
-            <input v-if="!set" type="text" v-model="email.subject"/>
+            <div class="email-compose-div">
+            <label class="compose-label" v-if="!set" for="Subject">Subject:</label>
+            <input class="compose-input" v-if="!set" type="text" v-model="email.subject"/>
             </div>
-            <div>
-            <textarea class="last" v-if="!set" type="text" v-model="email.body"></textarea>
+            <div class="email-compose-div">
+            <textarea class="last compose-textarea" v-if="!set" type="text" v-model="email.body"></textarea>
             </div>
-            <button :disabled="!isValid" v-if="!set" @click.prevent="logEmail">Send</button>
+            <button :disabled="!isValid" v-if="!set" @click.prevent="logEmail"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
         </form>
     </section>
     `,

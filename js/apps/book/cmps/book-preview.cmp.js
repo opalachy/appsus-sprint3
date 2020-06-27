@@ -5,9 +5,9 @@ export default {
     props: ['book'],
     template: `
         <li class="book-preview">
-        <h2>{{book.title}} </h2>
-        <h2 :class="classColor"> {{getCurSym}} </h2>
-        <img :src="book.thumbnail" width=150px >
+        <h2 class="helper-h2">{{book.title}} </h2>
+        <h2 class="helper-h2" :class="classColor"> {{getCurSym}} </h2>
+        <img class="img-helper" :src="book.thumbnail" width=150px >
         <router-link :to="'/book/' + book.id">Details</router-link> | 
         </li>
     `,

@@ -9,21 +9,23 @@
     font-size: 1rem;
 }
 
-form{
-    max-width: 500px;
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    padding: 0;
+.email-preview-div{
+    margin: 5px;
+    padding: 5px;
+    border-radius: 1rem;
 }
 
 .preview-last{
     width: 500px;
     margin: 0;
-}
+} 
 
-button{
+.button-email-preview{
     cursor: pointer;
+    border: none;
+    background: none;
+    font-size: 1.2rem;
+    margin-left: 15px;
 }
 
 select{
@@ -32,10 +34,55 @@ select{
 
 .email-preview{
     border: 1px solid black
-}
-div{
-    margin: 5px;
-}
+} 
+
 .Stars{
-    background-color: cadetblue;
+    color: rgb(232, 245, 49);
+}
+
+.preview-label {
+    border-style: ridge;
+    padding: 0.12rem;
+}
+
+.email-preview-form {
+    max-width: 500px;
+    margin: 5px 5px;
+    flex-direction: column;
+}
+
+.email-preview-form .preview-div  {
+    display: flex;
+    padding: 0;
+} 
+
+.preview-label {
+    flex-grow: 1;
+}
+
+.last {
+    flex-grow: 4;
+    min-height: 300px;
+    width: 500px;
+    margin: 0;
+    size: 500;
+}
+
+.preview-input {
+    flex-grow: 4;
+    min-height: 10px;
+    margin: 0;
+    padding: 0.1rem;
+}
+
+.last .compose-textarea {
+    flex-grow: 4;
+    min-height: 10px;
+    margin: 0;
+}
+
+preview-div{
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid black
 }

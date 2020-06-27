@@ -1,18 +1,20 @@
 
 export default {
     template: `
-        <section class="email-filter">
-            <input type="text" placeholder="Search By Subject" v-model="filterBy.searchBySubject" @input="filter"/>
-            <select v-model="filterBy.isRead" @input="filter">
-                <option >All</option>
-                <option>Read</option>
-                <option>Not Read</option>
-            </select>
+        <section class="email-filter flex">
+            <div>
+                    <input class="filter-input" type="text" placeholder="Search By Subject" v-model="filterBy.searchBySubject" @input="filter"/>
+                    <select class="filter-select" v-model="filterBy.isRead" @input="filter">
+                        <option >All</option>
+                        <option>Read</option>
+                        <option>Not Read</option>
+                    </select>
+            </div>    
             <div class="email-container">
-                <div class="box" @click="setInbox">Inbox</div>
-                <div class="box" @click="setStars">Stars</div>
-                <div class="box" @click="setDraft">Draft</div>
-                <div class="box" @click="setDelete"><i class="fa fa-trash" aria-hidden="true"></i></div>
+                <div class="box" @click="setInbox"><i class="fa fa-inbox" aria-hidden="true"></i> Inbox</div>
+                <div class="box" @click="setStars"><i class="fa fa-star-o" aria-hidden="true"></i> Stars</div>
+                <div class="box" @click="setDraft"><i class="fa fa-files-o" aria-hidden="true"></i> Draft</div>
+                <div class="box" @click="setDelete"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</div>
             </div>
         </section>
     `,

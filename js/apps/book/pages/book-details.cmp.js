@@ -8,13 +8,13 @@ export default {
         <section>
         <section v-if="book" class="book-details">
         <router-link to="/books">Back</router-link>
-                <button @click="close">X</button>
-                <h2>{{pageCount}}</h2>
-                <h2>{{publishedDate}}</h2>
-                <h2 :class="classColor">{{this.book.listPrice.amount}}</h2>
+                <button class="button-helper" @click="close">X</button>
+                <h2 class="helper-h2">{{pageCount}}</h2>
+                <h2 class="helper-h2">{{publishedDate}}</h2>
+                <h2 class="helper-h2" :class="classColor">{{this.book.listPrice.amount}}</h2>
                 <img v-if="book.listPrice.isOnSale" src="img/1.JPG" width=100px/>
                 <book-description :txt="book.description"></book-description>
-                <img :src="book.thumbnail" width=200px>
+                <img class="img-helper" :src="book.thumbnail" width=200px>
             </section>
             
         </section>

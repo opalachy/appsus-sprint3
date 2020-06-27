@@ -1,28 +1,28 @@
-.first.compose-label {
+.first.details-label {
     border: 1px solid black;
     background-color: black;
     color: white;
 }
 
-.compose-label {
+.details-label {
     border: 1px solid black;
     padding: 0.12rem;
 }
 
-.email-compose {
+.email-details {
     max-width: 500px;
     margin: 5px 5px;
     flex-direction: column;
     border: 1px solid black;
 }
 
-.email-compose .email-compose-div  {
+.email-details .email-details-div  {
     display: flex;
     margin: 0;
     padding: 0;
 }
 
-.compose-label {
+.details-label {
     flex-grow: 1;
 }
 
@@ -34,32 +34,23 @@
     size: 500;
 }
 
-.compose-input {
+.details-input {
     flex-grow: 4;
     min-height: 10px;
     margin: 0;
     padding: 0.1rem;
 }
 
-.last .compose-textarea {
+.last .details-textarea {
     flex-grow: 4;
     min-height: 10px;
     margin: 0;
 }
 
-.button-compose {
-    margin: 1rem;
+.button-details {
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-size: 1.2rem;
+    margin-left: 15px;
 }
-.button-compose:hover {
-    opacity: 0.8;
-    transition: opacity 0.6s 
-}
-
-.button-compose.control {
-    background-color: chocolate;
-    height: 3rem;
-    width: 10rem;
-    border-radius: 2rem;
-    font-weight: bold;
-}
-
