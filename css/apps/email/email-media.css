@@ -1,0 +1,24 @@
+@media (max-width: 740px){
+    .email-container{
+        flex-direction: column;
+        height: auto;
+        margin-right: 0.3rem;
+    }
+    .box{
+        margin-bottom: 5px;
+    }
+    .email-filter{
+        flex-flow: row-reverse;
+        justify-content: flex-end;
+        margin-left: 0.3rem;
+    }   
+    .email-preview .preview-div{
+        max-width: 300px;
+    }
+    .filter-input{
+        margin-bottom: 0.4rem;
+    }
+    .button-compose{
+        margin: 1rem 1rem 0 0.4rem;
+    }
+}
