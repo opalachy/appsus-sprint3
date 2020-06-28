@@ -7,6 +7,9 @@
     max-width: 150px;
 }
 
+.fa.fa-search{
+    color: rgb(185, 183, 183);
+}
 
 
 .search-bar input{ 

@@ -28,11 +28,12 @@ export default {
                             </div>
                         </form>
                 </section>
-
-                <router-link class="button-details"  v-if="nextEmailId" @click.native="wasRead" :to="'/email/' + nextEmailId"><i class="fa fa-reply" aria-hidden="true"></i></router-link>    
-                <router-link class="button-details"  to="/email"><i class="fa fa-sign-out" aria-hidden="true"></i></router-link>
-                <button class="button-details"  @click="close"><i class="fa fa-share" aria-hidden="true"></i></button>
-                <button class="button-details" @click="deleteEmail"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                <div class="button-container">
+                    <router-link class="button-details"  v-if="nextEmailId" @click.native="wasRead" :to="'/email/' + nextEmailId"><i class="fa fa-reply" aria-hidden="true"></i></router-link>    
+                    <router-link class="button-details"  to="/email"><i class="fa fa-sign-out" aria-hidden="true"></i></router-link>
+                    <button class="button-details"  @click="close"><i class="fa fa-share" aria-hidden="true"></i></button>
+                    <button class="button-details" @click="deleteEmail"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                </div>
         </section>
     `,
     data() {

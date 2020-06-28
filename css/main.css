@@ -11,6 +11,7 @@
 /* @import './apps/email/cmps/email-list.cmp.css'; */
 @import './apps/keep/edit-note.css';
 @import './apps/email/cmps/email-filter.cmp.css';
+@import './apps/email/cmps/email-folders.cmp.css';
 @import './apps/keep/main-keep-app.css';
 @import './apps/email/email-media.css';
 @import './apps/keep/keep-media.css';
@@ -23,7 +24,7 @@
 }
  body {
     margin: 0  ;
-    background-color: #a9a9a94d;
+    background-color: white;
 } 
 
 button{
