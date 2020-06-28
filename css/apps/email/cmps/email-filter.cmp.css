@@ -14,10 +14,9 @@
 .filter-input{
     border-radius: 2rem;
     margin-bottom: 0.2rem;
-    width: 6rem;
     background-color: transparent;
     border-style: none;
-
+    min-width: 14rem;
 }
 .filter-select{
     max-width: 20rem;

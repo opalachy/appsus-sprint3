@@ -25,7 +25,8 @@
 }
 
 .preview-last {
-    width: 500px;
+    width: 53.75rem;
+    height: 3rem;
     margin: 0;
     font-size: 0.8rem;
     font-style: normal;
@@ -69,7 +70,7 @@ select {
 }
 
 .email-preview-form {
-    max-width: 500px;
+    /* max-width: 500px; */
     margin: 5px 5px;
     flex-direction: column;
 }

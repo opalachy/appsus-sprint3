@@ -10,11 +10,11 @@ export default {
                         <form class="email-preview-form flex">
                             <div class="preview-div">
                                 <label class="preview-label" :class="isRead" for="to">To:</label>
-                                <input disabled class="preview-input" :class="isRead" type="email" v-model="email.to"/>
+                                <textarea disabled class="preview-input" :class="isRead" type="email" v-model="email.to"></textarea>
                             </div>
                             <div class="preview-div">
                                 <label class="preview-label" :class="isRead" for="Subject">Subject:</label>
-                                <input disabled class="preview-input" :class="isRead" type="text" v-model="email.subject"/> 
+                                <textarea disabled class="preview-input" :class="isRead" type="text" v-model="email.subject"> </textarea>
                             </div>
                             <div class="preview-div">
                                 <textarea disabled :class="isRead" class="preview-last"  type="text">{{email.body.substring(0, 100) + '...'}}</textarea>

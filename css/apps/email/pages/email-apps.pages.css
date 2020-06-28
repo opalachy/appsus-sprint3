@@ -1,9 +1,11 @@
-.container-filter-list{
+.container-filter-list {
     display: flex;
     flex-direction: row;
-   margin-top: 0.3rem;
+    margin-top: 0.3rem;
+    justify-content: center;
 }
-.email-app{
+
+.email-app {
     background-color: white;
     min-height: 70vh;
 }
