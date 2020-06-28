@@ -1,13 +1,15 @@
 import { Utils } from '../../../service/utils.service.js';
 import { emailServices } from "../../email/service/email.service.js";
+{/* <button class="button-compose control" v-if="set" @click="isCompose"><i class="fa fa-envelope-o" aria-hidden="true"></i> Compose</button>  */}
 
 export default {
     template: `
     <section class="email-compose-section">
-        <button class="button-compose control" v-if="set" @click="isCompose"><i class="fa fa-envelope-o" aria-hidden="true"></i> Compose</button> 
+        
+        <button class="button-compose control" v-if="set" @click="isCompose"><i class="fa fa-envelope-o" aria-hidden="true"></i> Compose</button>
         <button class="button-compose control" v-if="!set" @click="isSaveToDraft"><i class="fa fa-floppy-o" aria-hidden="true"></i> Draft</button> 
         <button class="button-compose control" v-if="!set" @click="isCompose"><i class="fa fa-sign-out" aria-hidden="true"></i> without saving</button>
-
+        
         <form v-if="!set" class="email-compose flex">
         <div>
             <div class="first compose-label" v-if="!set" for="to">New Email</div>

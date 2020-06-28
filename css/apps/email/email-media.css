@@ -6,13 +6,16 @@
     }
     .box {
         width: 5rem;
+        font-size: 0.7rem;
     }
     .email-preview .preview-div {
         max-width: 180px;
     }
     .filter-input {
-        width: 6rem;
-    }
+        width: 5rem;
+        border: none;
+        border-radius: 2rem;
+    } 
     .button-compose.control {
         margin: 0.5rem 0.3rem 0 0.3rem;
     }
@@ -22,16 +25,23 @@
     .button-email-preview {
         margin-left: 0.4rem;
     }
-    .preview-input{
+    .preview-input {
         font-size: 0.7rem;
     }
-    .preview-label{
+    .preview-label {
         font-size: 0.7rem;
     }
-    .text-media{
+    .text-media {
         margin: 0;
         padding: 0 0 0 5px;
         font-size: 0.7rem;
     }
-   
+    .search-box{
+        /* background-color: white; */
+        padding-left: 0.2rem;
+        border-radius: 2rem;
+        margin-bottom: 0.3rem;
+        max-width: 8rem;
+        max-height: 2rem;
+    }
 }
