@@ -65,6 +65,7 @@
 
 .book-preview:hover {
     background: rgba(148, 155, 160);
+    box-shadow: 4px 4px 4px 6px #ccc;
     opacity: 0.7;
     transition: opacity 0.6s
 }
