@@ -1,8 +1,7 @@
 
 .note-list div li{
-   /* padding: 20px; */
    text-align: center;
-   display: grid;
+   list-style-type: none;
    background-color: unset;
    font-size: 1.6rem;
    line-height: 1.5;

@@ -9,9 +9,10 @@ new Vue({
     <div>
         <div  @click="toggle" class="screen" :class="{'menu-open': open}" ></div>
        <header>
-         <nav class="main-navbar flex wrap align-center space-between">
-            <div>
-            <h1>Appsus</h1>
+          <nav class="main-navbar flex wrap align-center space-between">
+             <div class="flex align-center">
+                <h1>Appsus</h1>
+                <img class="logo" src="./img/horse.png"/>
             </div>
                <button @click="toggle" class="btn-menu">☰</button>
                <div @click="close" class="routes flex space-between" :class="{'menu-open': open}">
