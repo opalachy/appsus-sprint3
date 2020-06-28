@@ -4,37 +4,38 @@ import { emailServices } from "../../email/service/email.service.js";
 export default {
     template: `
     <section class="email-compose-section">
-        <button class="button-compose control" v-if="set" @click="isCompose"><i class="fa fa-envelope-o" aria-hidden="true"></i> Compose</button> 
+        
+        <button class="button-compose control" v-if="set" @click="isCompose"><i class="fa fa-envelope-o" aria-hidden="true"></i> Compose</button>
         <button class="button-compose control" v-if="!set" @click="isSaveToDraft"><i class="fa fa-floppy-o" aria-hidden="true"></i> Draft</button> 
         <button class="button-compose control" v-if="!set" @click="isCompose"><i class="fa fa-sign-out" aria-hidden="true"></i> without saving</button>
-
+        
         <form v-if="!set" class="email-compose flex">
-        <div>
-            <div class="first compose-label" v-if="!set" for="to">New Email</div>
-            <div class="email-compose-div">
-            <label class="compose-label" v-if="!set" for="to">To:</label>
-            <input class="compose-input" v-if="!set" type="email" pattern=".+@globex.com" size="30" required v-model="email.to"/>
+            <div>
+                        <div class="first compose-label" v-if="!set" for="to">New Email</div>
+                        <div class="email-compose-div">
+                                <label class="compose-label" v-if="!set" for="to">To:</label>
+                                <input class="compose-input" v-if="!set" type="email" pattern=".+@globex.com" size="30" required v-model="email.to"/>
+                        </div>
+                        <div class="email-compose-div">
+                                <label class="compose-label" v-if="!set" for="Cc">Cc:</label>
+                                <input class="compose-input" v-if="!set" type="text" v-model="email.cc"/>
+                        </div>
+                        <div class="email-compose-div">
+                                <label class="compose-label" v-if="!set" for="Bcc">Bcc:</label>
+                                <input class="compose-input" v-if="!set" type="text" v-model="email.bcc"/>
+                        </div>
+                        <div class="email-compose-div">
+                                <label class="compose-label" v-if="!set" for="Subject">Subject:</label>
+                                <input class="compose-input" v-if="!set" type="text" v-model="email.subject"/>
+                        </div>
+                        <div class="email-compose-div">
+                                 <textarea class="last compose-textarea" v-if="!set" type="text" v-model="email.body"></textarea>
+                        </div>
+                        <div class="email-compose-div">
+                                 <button :disabled="!isValid" v-if="!set" @click.prevent="logEmail"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+                        </div>
             </div>
-            <div class="email-compose-div">
-            <label class="compose-label" v-if="!set" for="Cc">Cc:</label>
-            <input class="compose-input" v-if="!set" type="text" v-model="email.cc"/>
-            </div>
-            <div class="email-compose-div">
-            <label class="compose-label" v-if="!set" for="Bcc">Bcc:</label>
-            <input class="compose-input" v-if="!set" type="text" v-model="email.bcc"/>
-            </div>
-            <div class="email-compose-div">
-            <label class="compose-label" v-if="!set" for="Subject">Subject:</label>
-            <input class="compose-input" v-if="!set" type="text" v-model="email.subject"/>
-            </div>
-            <div class="email-compose-div">
-            <textarea class="last compose-textarea" v-if="!set" type="text" v-model="email.body"></textarea>
-            </div>
-            <div class="email-compose-div">
-            <button :disabled="!isValid" v-if="!set" @click.prevent="logEmail"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
-            </div>
-            </div>
-            </form>
+        </form>
     </section>
     `,
     data() {

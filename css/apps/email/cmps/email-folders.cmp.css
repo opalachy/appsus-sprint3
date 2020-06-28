@@ -1,0 +1,42 @@
+.email-container{
+    display: flex;
+    height: 5vh;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    bottom: -3.875rem;
+    margin: 0 5rem 0 2rem;
+}
+.box{
+    cursor: pointer;
+    border: 1px solid black;
+    background-color: white;
+    text-align: left;
+    padding: 5px;
+    width: 10rem;
+    border-radius: 2rem;
+    font-weight: bold ;
+    padding-left: 0.4rem;
+    margin-top: 0.4rem;
+
+}
+.box:hover{
+    background-color: #ffbf00;
+    color:  black;
+    transition: background-color 0.5s 
+}
+
+.Inbox{
+    color: #ffbf00
+    ;
+}
+.Starss{
+    color: #ffbf00;
+}
+.Draft{
+    color:#ffbf00;
+}
+.Delete{
+    color: #ffbf00
+    ;
+}

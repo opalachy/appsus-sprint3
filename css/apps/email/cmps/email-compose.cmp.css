@@ -1,15 +1,19 @@
 .first.compose-label {
     border: 1px solid black;
-    background-color: #ffbf00
-    ;
-    color: white;
+    background-color: #ffbf00;
+    color: rgb(255, 255, 255);
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
+    padding: 1rem;
 }
 
 .compose-label {
-    border: 1px solid black;
-    padding: 0.12rem;
+    border-top: 1px solid black;
+    padding-left: 0.4rem;
+}
+
+textarea{
+    outline: none;
 }
 
 .email-compose {
@@ -44,16 +48,22 @@
     min-height: 10px;
     margin: 0;
     padding: 0.1rem;
+    font-size: 0.8rem;
+    font-style: normal;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .last .compose-textarea {
     flex-grow: 4;
     min-height: 10px;
     margin: 0;
+    font-size: 0.8rem;
+    font-style: normal;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .button-compose {
-    margin: 1rem 0rem 0 0.3rem;
+    margin: 1rem 0rem 0 2.5rem;
 }
 .button-compose:hover {
     opacity: 0.8;
@@ -63,10 +73,10 @@
 .button-compose.control {
     background-color: white;
     height: 2rem;
-    width: 10rem;
+    width: 12rem;
     border-radius: 2rem;
     font-weight: bold;
-    text-align: left;
+    text-align: center;
 }
 
 .button-compose.control:hover {

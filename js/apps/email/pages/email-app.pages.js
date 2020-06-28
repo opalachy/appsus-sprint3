@@ -2,16 +2,18 @@
 import { emailServices } from '../service/email.service.js'
 import emailList from '../cmps/email-list.cmp.js';
 import emailFilter from '../cmps/email-filiter.cmp.js';
+import emailFolders from '../cmps/email-folders.cmp.js';
 import emailCompose from '../cmps/email-compose.cmp.js';
 
 export default {
     template: `
     <main class="email-app">
-        <email-compose @clicked="setCompose" > Compose</email-compose>
-        <div class="container-filter-list">
-        <email-filter v-if="isCompose" @filtered="setFilter" ></email-filter>
+    <email-filter v-if="isCompose" @filtered="setFilter" ></email-filter>
+    <email-compose @clicked="setCompose" > Compose</email-compose>
+    <div class="container-filter-list flex">
+        <email-folders v-if="isCompose" @filteredfolders="setFilter" ></email-folders>
         <email-list v-if="isCompose" :emails="emailsToShow" ></email-list >
-        </div>
+    </div>
     </main>   
 `,
     data() {
@@ -102,6 +104,7 @@ export default {
     components: {
         emailFilter,
         emailList,
-        emailCompose
+        emailCompose,
+        emailFolders
     }
 }

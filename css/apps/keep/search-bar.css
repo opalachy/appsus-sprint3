@@ -13,6 +13,23 @@
 
 .search-bar input{ 
     margin: 0 auto;
+    text-align: center; 
+     margin: 0 auto; 
+}
+.search-icon{
+    background-color: white;
+    max-width: 150px;
+}
+
+.fa.fa-search{
+    color: rgb(185, 183, 183);
+}
+
+
+.search-bar input{ 
+    margin: unset;
+    background-color: transparent;
+    max-width: 150px;
 }
 .search-bar h1{
     margin: 0 auto;

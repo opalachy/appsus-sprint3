@@ -1,47 +1,65 @@
-
-.bold{
+.bold {
     font-weight: bold;
     font-size: 1rem;
 }
 
-.normal{
+.normal {
     font-weight: normal;
     font-size: 1rem;
 }
 
-.email-preview-div{
+.email-preview-div {
     margin: 5px;
     padding: 5px;
     border-radius: 1rem;
     background-color: white;
 }
 
-.email-preview.email-preview-div{
+.email-preview.email-preview-div:hover {
+    box-shadow: 4px 4px 4px 6px #ffbf00;
+    transition: box-shadow 0.5s 
+}
+
+.email-preview.email-preview-div {
     border-color: #ffbf00;
 }
 
-.preview-last{
+.preview-last {
     width: 500px;
     margin: 0;
-} 
+    font-size: 0.8rem;
+    font-style: normal;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
 
-.button-email-preview{
+.button-email-preview {
     cursor: pointer;
     border: none;
     background: none;
     font-size: 1.2rem;
     margin-left: 1rem;
+    /* color: lightgray; */
 }
 
-select{
+.button-email-preview:hover {
+   box-shadow: 4px 4px 4px 6px #ccc3a7;
+   transition: box-shadow 0.5s ;
+   /* color: rgb(71, 67, 67); */
+}
+.fa.fa-info-circle:hover {
+    box-shadow: 4px 4px 4px 6px #ccc3a7;
+    transition: box-shadow 0.5s 
+}
+
+select {
     margin-bottom: 20px;
 }
 
-.email-preview{
+.email-preview {
     border: 1px solid black
-} 
+}
 
-.Stars{
+.Stars {
     color: rgb(232, 245, 49);
 }
 
@@ -56,11 +74,10 @@ select{
     flex-direction: column;
 }
 
-.email-preview-form .preview-div  {
+.email-preview-form .preview-div {
     display: flex;
     padding: 0;
-
-} 
+}
 
 .preview-label {
     flex-grow: 1;
@@ -79,6 +96,9 @@ select{
     min-height: 10px;
     margin: 0;
     padding: 0.1rem;
+    font-size: 0.8rem;
+    font-style: normal;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .last .compose-textarea {
@@ -87,11 +107,19 @@ select{
     margin: 0;
 }
 
-preview-div{
+preview-div {
     margin: 5px;
     padding: 5px;
     border: 1px solid black
 }
-.bottom-button{
+
+.bottom-button {
+    text-align: center;
+}
+
+.text-media {
+    font-size: 0.8rem;
+    font-style: normal;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     text-align: center;
 }
