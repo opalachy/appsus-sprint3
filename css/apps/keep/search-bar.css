@@ -1,9 +1,18 @@
 .search-bar{
     text-align: center;
     margin: 0 auto; 
+    width: 500px;
+    /* border: 1px solid black; */
+    margin-bottom: 30px;
+    margin-top: 30px;
+    box-shadow: 1px 3px 6px 2px #959595;
+    max-width: 500px;
+    height: 55px;
+    border-radius: 20px;
 }
+
 .search-bar input{ 
-    margin: unset;
+    margin: 0 auto;
 }
 .search-bar h1{
     margin: 0 auto;
@@ -13,7 +22,10 @@
     padding: 1rem;
     font-size: 1rem;
     border-radius: 20px;
-    margin-top: 20px;
     border: none;
     outline:none;
+}
+
+.search-bar option{
+    border-radius: 20px;
 }

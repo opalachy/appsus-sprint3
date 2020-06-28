@@ -6,15 +6,16 @@
 //to pages
 export default{
     template:`
-    <section class="add-note flex column">
+    <section class="flex column">
         <section >
-            <input type="text" @keyup="keyUp"  @blur="addNote(selectedNoteType)" v-model="inputValue" :placeholder="getPlaceHolderText(selectedNoteType)"/>
-                <div>
+                <div class="add-note flex justify-center align-center" >
+                <input type="text" @keyup="keyUp"  @blur="addNote(selectedNoteType)" v-model="inputValue" :placeholder="getPlaceHolderText(selectedNoteType)"/>
                 <i class="fa fa-font" aria-hidden="true" :class="{'selected-btn': selectedNoteType === 'NoteText'}" v-on:click="selectNoteType('NoteText')"></i>
                 <i class="fa fa-youtube-square" aria-hidden="true" :class="{'selected-btn': selectedNoteType === 'NoteVideo'}" v-on:click="selectNoteType('NoteVideo')"></i>
                 <i class="fa fa-picture-o" aria-hidden="true" :class="{'selected-btn': selectedNoteType === 'NoteImg'}" v-on:click="selectNoteType('NoteImg')"></i>
                 <i class="fa fa-list" aria-hidden="true" :class="{'selected-btn': selectedNoteType === 'NoteTodos'}" v-on:click="selectNoteType('NoteTodos')"></i>
                 </div>
+                
         </section>
         <!-- <button v-on:click="addNote(selectedNoteType)"> -->
             <!-- <i class="fa fa-plus add-icon" aria-hidden="true" v-on:click="addNote(selectedNoteType)"></i> -->
@@ -50,6 +51,7 @@ export default{
         addNote(noteType){
             var newNote = {};
             newNote.type = noteType;
+            newNote.isPinned = false,
             newNote.info = {};
             newNote.style = {
                 activeColor:'lightgray',

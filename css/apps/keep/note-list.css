@@ -1,7 +1,6 @@
 
 .note-list div li{
-   width: 300px;
-   padding: 20px;
+   /* padding: 20px; */
    text-align: center;
    display: grid;
    background-color: unset;
@@ -37,6 +36,8 @@
 
 .note-list li p{
     cursor: pointer;
+    border-bottom: 1px solid;
+    margin: 0;
 }
 .note-view{
     /* box-shadow: 4px 4px 4px 6px #ccc; */

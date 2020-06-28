@@ -12,7 +12,7 @@ export default{
     `,
     data() {
         return{
-             backgroundColor : ['lightblue','lightgreen','bisque','lightgray','burlywood','lightsalmon','plum','darkorange']   
+             backgroundColor : ['lightblue','lightgreen','bisque','lightgray','burlywood','lightsalmon','plum','darkorange','white']   
         }
         
     },

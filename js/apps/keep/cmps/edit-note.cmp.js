@@ -11,9 +11,9 @@ export default{
           <div class="modal-wrapper">
             <div class="modal-container" :style="{'background-color': note.style.activeColor}">
             <component :is-edit="true" :is="note.type" :note="note"></component>
+            <i  class="fa fa-check modal-default-button" @click="saveEdit()" aria-hidden="true"></i>
               <div class="modal-footer">
-                  <i  class="fa fa-check modal-default-button" @click="saveEdit()" aria-hidden="true"></i>
-                </slot>
+                <!-- </slot> -->
               </div>
             </div>
           </div>

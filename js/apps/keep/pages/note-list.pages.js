@@ -14,13 +14,6 @@ export default{
     components:{
         NoteView
     },
-    // computed:{
-    //     listId(){
-    //         return "list" + this._uid;
-    //     }
-    //   :list="listId"
-    //  }
+
 
 }
-
-// 

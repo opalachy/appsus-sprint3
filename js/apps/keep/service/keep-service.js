@@ -24,7 +24,7 @@ function createNotes() {
               txt: "Fullstack Me Baby!"
           },
           style: {
-            activeColor: 'lightgray'
+            activeColor: 'darkorange'
           }
       },
       {
@@ -35,34 +35,37 @@ function createNotes() {
           txt: "Reaminder go to have coffe!"
         },
           style: {
-            activeColor: 'lightgray'
+            activeColor: 'plum'
         }
       },
       {
           id: Utils.getRandomId(),        
           type: "NoteImg",
+          isPinned: false,
           info: {
               url: "img/humor.jpg",
               title: "Me playing Mi"
           },
           style: {
-            activeColor: 'lightgray'
+            activeColor: 'bisque'
           }
       },
       {
           id: Utils.getRandomId(),
           type: "NoteVideo",
+          isPinned: false,
           info: {
           url: "https://www.youtube.com/watch?v=yYDmaexVHic",
           title: "some video"
       },
         style: {
-          activeColor: 'lightgray'
+          activeColor: 'lightgreen'
       }
       },
       {
           id: Utils.getRandomId(),
           type: "NoteVideo",
+          isPinned: false,
           info: {
           url: "https://www.youtube.com/watch?v=FOyuZXUkawg",
           title: "some video"
@@ -74,15 +77,18 @@ function createNotes() {
       {
           id: Utils.getRandomId(),
           type: "NoteTodos",
+          isPinned: false,
           info: {
             label: "How was it:",
             todos: [
-                { txt: "Do that",  doneAt: null },
-                { txt: "Do this", doneAt: Date.now() }
+              { txt: "Coffe", doneAt: null},
+              { txt: "Coding", doneAt: null},
+              { txt: "Sleep", doneAt: null},
+              { txt: "Repeat", doneAt: null}
             ]
           },
           style: {
-            activeColor: 'lightgray'
+            activeColor: 'lightblue'
         }
       }
    ];

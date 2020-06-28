@@ -14,8 +14,10 @@ export default {
         <note-add @onAddNote="addNote"></note-add>
         <section v-show="getPinnednotes(notesToShow).length > 0">
             <h4 class="keep-category">Pinned Notes:</h4>
+            <hr/>
             <note-list class="flex wrap" v-on:click="selectNote" :notes="getPinnednotes(notesToShow)"></note-list>
             <h4 class="keep-category">Other Notes:</h4>
+            <hr/>
         </section>
         <note-list class="flex wrap" v-on:click="selectNote" :notes="getOtherNotes(notesToShow)"></note-list>
     </main>   
